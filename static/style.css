@@ -1,0 +1,176 @@
+﻿/* ---------------------------------------------------------------------------
+   STYLE.CSS PERSONALIZADO PARA DiaNutri
+   - Uso em conjunto com Bulma
+   - Sticky footer + fonte maior para lista de alimentos
+--------------------------------------------------------------------------- */
+
+/* 1) Fonte do Google (opcional) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/* 2) Reset e estilo global */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f8f9fa; /* cor de fundo clara */
+  color: #363636;           /* cor principal do Bulma */
+  font-size: 18px;          /* AUMENTAR fonte base (ex: 18px) */
+  line-height: 1.6;
+}
+
+/* 3) Flex container para sticky footer */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 4) .main-content ocupa o espaço, empurrando o footer para baixo */
+.main-content {
+  flex: 1 0 auto;
+}
+
+/* 5) Footer fixo ao final */
+footer {
+  flex-shrink: 0;
+  background-color: #363636;
+  color: #fff;
+  padding: 1rem;
+}
+footer .content.has-text-centered {
+  text-align: center;
+}
+
+/* 6) Títulos extras */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* 7) Ajustes para a listagem de alimentos */
+.box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Cria duas colunas */
+  gap: 1.5rem;                           /* Espaçamento entre os cards */
+  margin-bottom: 1.5rem;
+}
+
+.box .food-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  border-bottom: 1px solid #ddd;       /* Linha separadora */
+  margin-bottom: 0.75rem;               /* Espaço entre os itens */
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.box .food-item .food-name {
+  font-size: 1.2rem;                    /* Fonte maior para o nome */
+  font-weight: 600;
+  color: #1d1d1d;
+  display: flex;
+  flex-direction: column;               /* Organiza nome e informações em coluna */
+  align-items: flex-start;              /* Alinha à esquerda */
+  margin-left: 15px;                    /* Espaço entre a imagem e o nome */
+  flex-grow: 1;                         /* Expande o espaço disponível */
+}
+
+.box .food-item .food-details {
+  font-size: 1rem;
+  color: #777;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.box .food-item img {
+  width: 90px;  /* Tamanho fixo para as imagens */
+  height: 90px; /* Tamanho fixo para as imagens */
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 50%; /* Manter borda arredondada */
+}
+
+.box .food-item .food-name a {
+  text-decoration: none;
+  color: #1d1d1d;
+}
+
+.box .food-item .food-name a:hover {
+  color: #007bff;
+  font-weight: 700;
+}
+
+/* 8) Detalhes do alimento */
+.details-box {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* 9) Imagem do alimento com borda arredondada e sombra */
+.details-box img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+/* 10) Texto na página de detalhes do alimento */
+.details-box p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+/* 11) Botão de voltar estilizado */
+.button.is-link {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+
+.button.is-link:hover {
+  background-color: #0056b3;
+  cursor: pointer;
+}
+
+/* 12) Estilo da barra de busca */
+.form-control {
+  font-size: 1rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+  width: 250px;
+  margin-right: 0.5rem;
+  border: 1px solid #ddd;
+}
+
+.button.is-info {
+  padding: 0.8rem 1.5rem;
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+}
+
+.button.is-info:hover {
+  background-color: #138496;
+}
+
+/* FIM */

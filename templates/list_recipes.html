@@ -1,0 +1,33 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Lista de Receitas{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Lista de Receitas</h2>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Ver Detalhes</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for recipe in recipes %}
+    <tr>
+      <td>{{ recipe['title'] }}</td>
+      <td>
+        <a href="{{ url_for('recipe_detail', recipe_id=recipe['id']) }}" class="btn btn-primary btn-sm">
+          Detalhes
+        </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<div class="mt-4">
+  <a href="{{ url_for('add_recipe') }}" class="btn btn-success">Adicionar Receita</a>
+</div>
+{% endblock %}
+    

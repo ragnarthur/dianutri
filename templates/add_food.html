@@ -1,0 +1,31 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Adicionar Alimento{% endblock %}
+
+{% block content %}
+<h2>Adicionar Novo Alimento</h2>
+<form method="POST" action="{{ url_for('add_food') }}">
+  <div class="mb-3">
+    <label for="name" class="form-label">Nome do Alimento</label>
+    <input type="text" class="form-control" id="name" name="name" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="category" class="form-label">Categoria</label>
+    <input type="text" class="form-control" id="category" name="category">
+  </div>
+
+  <div class="mb-3">
+    <label for="glycemic_index" class="form-label">Índice Glicêmico</label>
+    <input type="number" class="form-control" id="glycemic_index" name="glycemic_index">
+  </div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Descrição</label>
+    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Salvar</button>
+  <a href="{{ url_for('list_foods') }}" class="btn btn-secondary">Voltar</a>
+</form>
+{% endblock %}

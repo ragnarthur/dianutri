@@ -1,0 +1,11 @@
+﻿{% extends "base.html" %}
+
+{% block title %}{{ recipe['title'] }}{% endblock %}
+
+{% block content %}
+<h2>{{ recipe['title'] }}</h2>
+<p><strong>Ingredientes:</strong><br>{{ recipe['ingredients'] }}</p>
+<p><strong>Modo de Preparo:</strong><br>{{ recipe['instructions'] }}</p>
+
+<a href="{{ url_for('list_recipes') }}" class="btn btn-secondary mt-3">Voltar</a>
+{% endblock %}

@@ -1,0 +1,26 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Adicionar Receita{% endblock %}
+
+{% block content %}
+<h2>Adicionar Nova Receita</h2>
+<form method="POST" action="{{ url_for('add_recipe') }}">
+  <div class="mb-3">
+    <label for="title" class="form-label">Título</label>
+    <input type="text" class="form-control" id="title" name="title" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="ingredients" class="form-label">Ingredientes</label>
+    <textarea class="form-control" id="ingredients" name="ingredients" rows="3"></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="instructions" class="form-label">Modo de Preparo</label>
+    <textarea class="form-control" id="instructions" name="instructions" rows="5"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Salvar</button>
+  <a href="{{ url_for('list_recipes') }}" class="btn btn-secondary">Voltar</a>
+</form>
+{% endblock %}

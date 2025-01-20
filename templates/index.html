@@ -1,0 +1,21 @@
+﻿{% extends "base.html" %}
+
+{% block title %}DiaNutri - Início{% endblock %}
+
+{% block content %}
+<div class="has-text-centered">
+  <h1 class="title">Bem-vindo ao DiaNutri</h1>
+  <p class="subtitle">
+    Seu guia de alimentação saudável e receitas para diabetes.
+  </p>
+
+  <div class="buttons is-centered">
+    <a href="{{ url_for('list_foods') }}" class="button is-primary">
+      Ver Alimentos
+    </a>
+    <a href="{{ url_for('list_recipes') }}" class="button is-link">
+      Ver Receitas
+    </a>
+  </div>
+</div>
+{% endblock %}

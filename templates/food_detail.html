@@ -1,25 +1,27 @@
 ﻿{% extends "base.html" %}
-
 {% block title %}{{ food['name'] }}{% endblock %}
 
 {% block content %}
 <div class="main-content">
   <div class="details-box">
+    <!-- Título maior e chamativo -->
     <h2>{{ food['name'] }}</h2>
 
     {% set image_file = image_map.get(food['name'], 'default.jpg') %}
-    <!-- Exibe a imagem do alimento com tamanho maior e estilo moderno -->
+    <!-- Exibe a imagem do alimento em tamanho maior com estilo moderno -->
     <img src="{{ url_for('static', filename='images/' ~ image_file) }}" 
          alt="{{ food['name'] }}">
 
+    <!-- Categoria e Índice Glicêmico -->
     <p><strong>Categoria:</strong> {{ food['category'] }}</p>
     <p><strong>Índice Glicêmico:</strong> {{ food['glycemic_index'] }}</p>
+
+    <!-- Descrição, Benefícios e Sugestões -->
     <p><strong>Descrição:</strong> {{ food['description'] }}</p>
-    
-    <!-- Novas informações com bordas e separação adequada -->
     <p><strong>Benefícios:</strong> {{ food['benefits'] }}</p>
     <p><strong>Sugestões de Consumo:</strong> {{ food['suggestions'] }}</p>
 
+    <!-- Botão de Voltar -->
     <a href="{{ url_for('list_foods') }}" class="button is-link mt-3">Voltar</a>
   </div>
 </div>

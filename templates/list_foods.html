@@ -23,10 +23,10 @@
       {% set gi_value = food['glycemic_index'] %}
 
       {# Classificação do IG nas três faixas: #}
-      {% if gi_value <= 44 %}
+      {% if gi_value <= 40 %}
         {% set gi_label = "Baixo IG" %}
         {% set badge_class = "tag is-success" %}
-      {% elif gi_value <= 50 %}
+      {% elif gi_value <= 55 %}
         {% set gi_label = "Moderado IG" %}
         {% set badge_class = "tag is-warning" %}
       {% else %}
@@ -36,19 +36,23 @@
 
       <div class="food-item" style="margin-bottom: 1rem; border-bottom: 1px solid #ddd; padding-bottom: 0.75rem;">
         <div class="food-name" style="font-size: 1.2rem; font-weight: 600; display: flex; flex-direction: column; align-items: center;">
-          <!-- Exibe a imagem do alimento ao lado do nome com maior tamanho -->
+          <!-- Imagem do alimento -->
           <img src="{{ url_for('static', filename='images/' ~ image_map.get(food['name'], 'default.jpg')) }}" 
                alt="{{ food['name'] }}" 
                style="width: 90px; height: 90px; object-fit: cover; margin-bottom: 10px;">
           
-          <!-- Torna o nome do alimento clicável -->
+          <!-- Nome do alimento, clicável -->
           <a href="{{ url_for('food_detail', food_id=food['id']) }}" class="has-text-link">
             {{ food['name'] }}
           </a>
         </div>
 
+        <!-- Exibição do IG com badge (valor + texto) -->
         <div class="food-details" style="font-size: 0.95rem; color: #555; text-align: center;">
-          <p>{{ food['category'] }} | IG: {{ gi_value }}</p>
+          <p>
+            {{ food['category'] }} | 
+            IG: <span class="{{ badge_class }}">{{ gi_value }} - {{ gi_label }}</span>
+          </p>
           <a href="{{ url_for('food_detail', food_id=food['id']) }}" class="has-text-link is-size-6">
             Detalhes
           </a>

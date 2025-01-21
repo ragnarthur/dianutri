@@ -16,9 +16,9 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: 'Open Sans', sans-serif;
-  background-color: #f8f9fa; /* cor de fundo clara */
-  color: #363636;           /* cor principal do Bulma */
-  font-size: 18px;          /* AUMENTAR fonte base (ex: 18px) */
+  background-color: #f8f9fa; /* Fundo claro */
+  color: #363636;           /* Cor principal */
+  font-size: 18px;          /* Aumenta fonte base */
   line-height: 1.6;
 }
 
@@ -29,7 +29,7 @@ body {
   min-height: 100vh;
 }
 
-/* 4) .main-content ocupa o espaço, empurrando o footer para baixo */
+/* 4) .main-content ocupa o espaço, empurrando o footer */
 .main-content {
   flex: 1 0 auto;
 }
@@ -52,11 +52,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-/* 7) Ajustes para a listagem de alimentos */
+/* 7) Listagem de alimentos (2 colunas) */
 .box {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Cria duas colunas */
-  gap: 1.5rem;                           /* Espaçamento entre os cards */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
@@ -64,37 +64,37 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   padding: 0.75rem;
-  border-bottom: 1px solid #ddd;       /* Linha separadora */
-  margin-bottom: 0.75rem;               /* Espaço entre os itens */
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 0.75rem;
   border-radius: 8px;
   background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .box .food-item .food-name {
-  font-size: 1.2rem;                    /* Fonte maior para o nome */
+  font-size: 1.2rem;
   font-weight: 600;
   color: #1d1d1d;
   display: flex;
-  flex-direction: column;               /* Organiza nome e informações em coluna */
-  align-items: flex-start;              /* Alinha à esquerda */
-  margin-left: 15px;                    /* Espaço entre a imagem e o nome */
-  flex-grow: 1;                         /* Expande o espaço disponível */
+  flex-direction: column;
+  align-items: center;
+  margin-left: 15px;
+  flex-grow: 1;
 }
 
 .box .food-item .food-details {
   font-size: 1rem;
   color: #777;
-  text-align: left;
+  text-align: center;
   margin-top: 10px;
 }
 
 .box .food-item img {
-  width: 90px;  /* Tamanho fixo para as imagens */
-  height: 90px; /* Tamanho fixo para as imagens */
+  width: 90px;
+  height: 90px;
   object-fit: cover;
   margin-right: 15px;
-  border-radius: 50%; /* Manter borda arredondada */
+  border-radius: 50%;
 }
 
 .box .food-item .food-name a {
@@ -118,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-/* 9) Imagem do alimento com borda arredondada e sombra */
+/* 9) Imagem do alimento (página de detalhes) */
 .details-box img {
   width: 300px;
   height: 300px;
@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1.5rem;
 }
 
-/* 10) Texto na página de detalhes do alimento */
+/* 10) Texto (página de detalhes) */
 .details-box p {
   font-size: 1.1rem;
   line-height: 1.6;
@@ -136,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #555;
 }
 
-/* 11) Botão de voltar estilizado */
+/* 11) Botão Voltar estilizado */
 .button.is-link {
   background-color: #007bff;
   color: white;
@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 
-/* 12) Estilo da barra de busca */
+/* 12) Barra de busca */
 .form-control {
   font-size: 1rem;
   padding: 0.8rem 1.2rem;
@@ -173,4 +173,28 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #138496;
 }
 
+/* 13) Classes para colorir o IG (Bulma-like tags) */
+.tag.is-success {
+  background-color: #48c774; /* Verde */
+  color: #fff;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.tag.is-warning {
+  background-color: #ffdd57; /* Amarelo */
+  color: #363636;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.tag.is-danger {
+  background-color: #f14668; /* Vermelho */
+  color: #fff;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
 /* FIM */
+  

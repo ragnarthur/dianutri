@@ -1,11 +1,11 @@
 ﻿/* ---------------------------------------------------------------------------
    STYLE.CSS PERSONALIZADO PARA DiaNutri
    - Uso em conjunto com Bulma
-   - Sticky footer + fonte maior para lista de alimentos
+   - Sticky footer + fonte maior + rota de receitas estilizada
 --------------------------------------------------------------------------- */
 
-/* 1) Fonte do Google (opcional) */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+/* 1) Fonte do Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 /* 2) Reset e estilo global */
 * {
@@ -15,18 +15,18 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #f8f9fa; /* Fundo claro */
-  color: #363636;           /* Cor principal */
-  font-size: 18px;          /* Aumenta fonte base */
-  line-height: 1.6;
+  color: #363636;           /* Cor principal do Bulma */
+  font-size: 20px;          /* Aumentar fonte base */
+  line-height: 1.8;         /* Maior espaçamento entre linhas */
 }
 
 /* 3) Flex container para sticky footer */
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh; 
 }
 
 /* 4) .main-content ocupa o espaço, empurrando o footer */
@@ -45,21 +45,20 @@ footer .content.has-text-centered {
   text-align: center;
 }
 
-/* 6) Títulos extras */
+/* 6) Títulos */
 h1, h2, h3, h4, h5, h6 {
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-weight: 600;
 }
 
-/* 7) Listagem de alimentos (2 colunas) */
+/* 7) Ajustes para lista de alimentos */
 .box {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-bottom: 1.5rem;
 }
-
 .box .food-item {
   display: flex;
   align-items: center;
@@ -70,7 +69,6 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .box .food-item .food-name {
   font-size: 1.2rem;
   font-weight: 600;
@@ -81,14 +79,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 15px;
   flex-grow: 1;
 }
-
 .box .food-item .food-details {
   font-size: 1rem;
   color: #777;
   text-align: center;
   margin-top: 10px;
 }
-
 .box .food-item img {
   width: 90px;
   height: 90px;
@@ -96,18 +92,27 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 15px;
   border-radius: 50%;
 }
-
 .box .food-item .food-name a {
   text-decoration: none;
   color: #1d1d1d;
 }
-
 .box .food-item .food-name a:hover {
   color: #007bff;
   font-weight: 700;
 }
 
-/* 8) Detalhes do alimento */
+/* 8) Tabela Bulma para Receitas */
+.table-container {
+  margin-bottom: 1.5rem;
+}
+.table.is-fullwidth {
+  width: 100%;
+}
+.table.is-hoverable tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* 9) Imagem (detalhes do alimento) */
 .details-box {
   background-color: #fff;
   padding: 2rem;
@@ -117,8 +122,6 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
   text-align: center;
 }
-
-/* 9) Imagem do alimento (página de detalhes) */
 .details-box img {
   width: 300px;
   height: 300px;
@@ -127,8 +130,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 1.5rem;
 }
-
-/* 10) Texto (página de detalhes) */
 .details-box p {
   font-size: 1.1rem;
   line-height: 1.6;
@@ -136,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #555;
 }
 
-/* 11) Botão Voltar estilizado */
+/* 10) Botões */
 .button.is-link {
   background-color: #007bff;
   color: white;
@@ -146,55 +147,164 @@ h1, h2, h3, h4, h5, h6 {
   transition: background-color 0.3s ease;
   font-weight: 600;
 }
-
 .button.is-link:hover {
   background-color: #0056b3;
   cursor: pointer;
 }
-
-/* 12) Barra de busca */
-.form-control {
-  font-size: 1rem;
-  padding: 0.8rem 1.2rem;
-  border-radius: 4px;
-  width: 250px;
-  margin-right: 0.5rem;
-  border: 1px solid #ddd;
-}
-
 .button.is-info {
   padding: 0.8rem 1.5rem;
   background-color: #17a2b8;
   color: white;
   border: none;
 }
-
 .button.is-info:hover {
   background-color: #138496;
 }
+.button.is-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+.button.is-primary:hover {
+  background-color: #0056b3;
+}
+.button.is-success {
+  background-color: #28a745;
+  color: #fff;
+}
+.button.is-success:hover {
+  background-color: #218838;
+}
 
-/* 13) Classes para colorir o IG (Bulma-like tags) */
-.tag.is-success {
-  background-color: #48c774; /* Verde */
-  color: #fff;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
+/* ---------------------------------------------------------------------------
+   Ajustes adicionais para a página de receitas
+--------------------------------------------------------------------------- */
+/* Título da página */
+.page-background h2 {
+  font-size: 2rem;
+  color: #bed1ec; /* Azul escuro */
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Melhor contraste */
+  margin-bottom: 2rem;
+}
+
+/* Grid de cards */
+.recipe-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* Estilo dos cartões de receitas */
+.recipe-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* Estilização dos cards */
+.recipe-card {
+  background-color: rgba(255, 255, 255, 0.6); /* Transparência de 0.6 */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.7); /* Reduz a transparência no hover */
+}
+
+.recipe-card h3 {
+  font-size: 1.5rem;
+  color: #0056b3; /* Melhor contraste */
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.recipe-card:hover h3 {
+  color: #003f8a; /* Cor mais escura no hover */
+}
+
+/* Texto resumo dos cards */
+.recipe-card .recipe-summary {
+  font-size: 1rem;
+  color: #212529; /* Preto suave */
+  margin-bottom: 1rem;
+}
+
+.recipe-card .recipe-details {
+  display: none;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.recipe-card .recipe-details.active {
+  display: block;
+}
+
+.recipe-card .recipe-details a {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.recipe-card .recipe-details a:hover {
+  color: #0056b3;
+}
+
+/* Títulos dos cards */
+.recipe-card h3 {
+  font-size: 1.5rem;
+  color: #c5d5eb; /* Azul escuro */
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.recipe-card:hover h3 {
+  color: #457b9d; /* Azul intermediário no hover */
+}
+
+/* Links e botões */
+.recipe-card a {
+  text-decoration: none;
+  background-color: #457b9d; /* Azul intermediário */
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.recipe-card a:hover {
+  background-color: #1d3557; /* Azul mais escuro */
+}
+
+/* Botões gerais */
+.button.is-link {
+  background-color: #457b9d;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
   font-weight: 600;
 }
-.tag.is-warning {
-  background-color: #ffdd57; /* Amarelo */
-  color: #363636;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-weight: 600;
-}
-.tag.is-danger {
-  background-color: #f14668; /* Vermelho */
-  color: #fff;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-weight: 600;
+
+.button.is-link:hover {
+  background-color: #1d3557;
+  cursor: pointer;
 }
 
 /* FIM */
-  

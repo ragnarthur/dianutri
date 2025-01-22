@@ -3,31 +3,78 @@
 {% block title %}Lista de Receitas{% endblock %}
 
 {% block content %}
-<h2 class="mb-4">Lista de Receitas</h2>
+<div class="page-background">
+  <h2 class="title is-4 mb-4 has-text-centered">Lista de Receitas</h2>
 
-<table class="table table-bordered table-hover">
-  <thead>
-    <tr>
-      <th>Título</th>
-      <th>Ver Detalhes</th>
-    </tr>
-  </thead>
-  <tbody>
+  <div class="recipe-grid-container">
     {% for recipe in recipes %}
-    <tr>
-      <td>{{ recipe['title'] }}</td>
-      <td>
-        <a href="{{ url_for('recipe_detail', recipe_id=recipe['id']) }}" class="btn btn-primary btn-sm">
-          Detalhes
-        </a>
-      </td>
-    </tr>
+    <div class="recipe-card">
+      <h3>{{ recipe['title'] }}</h3>
+      <p class="recipe-summary">Clique para ver mais detalhes.</p>
+      <a href="{{ url_for('recipe_detail', recipe_id=recipe['id']) }}" class="button is-link">Ver Receita</a>
+    </div>
     {% endfor %}
-  </tbody>
-</table>
-
-<div class="mt-4">
-  <a href="{{ url_for('add_recipe') }}" class="btn btn-success">Adicionar Receita</a>
+  </div>
 </div>
+
+<style>
+  .page-background {
+    background: url('{{ url_for("static", filename="images/background/cozinhando.jpg") }}') no-repeat center center fixed;
+    background-size: cover;
+    padding: 2rem;
+    min-height: 100vh;
+  }
+
+  .recipe-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  .recipe-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .recipe-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .recipe-card h3 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .recipe-card:hover h3 {
+    color: #0056b3;
+  }
+
+  .recipe-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+
+  .recipe-card a {
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  .recipe-card a:hover {
+    background-color: #0056b3;
+  }
+</style>
 {% endblock %}
-    

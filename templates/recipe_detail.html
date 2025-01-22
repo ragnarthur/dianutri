@@ -3,9 +3,24 @@
 {% block title %}{{ recipe['title'] }}{% endblock %}
 
 {% block content %}
-<h2>{{ recipe['title'] }}</h2>
-<p><strong>Ingredientes:</strong><br>{{ recipe['ingredients'] }}</p>
-<p><strong>Modo de Preparo:</strong><br>{{ recipe['instructions'] }}</p>
+<h2 class="title is-4 mb-4">{{ recipe['title'] }}</h2>
 
-<a href="{{ url_for('list_recipes') }}" class="btn btn-secondary mt-3">Voltar</a>
+<div class="details-box">
+  <img 
+    src="{{ url_for('static', filename='images/recipes/' + image) }}" 
+    alt="{{ recipe['title'] }}" 
+    class="recipe-image"
+    onerror='this.src="{{ url_for("static", filename="images/recipes/default.jpg") }}";'>
+
+  <p><strong>Ingredientes:</strong></p>
+  <p>{{ recipe['ingredients'] }}</p>
+  <p><strong>Modo de Preparo:</strong></p>
+  <ol>
+    {% for step in recipe['instructions'].split('\n') %}
+      <li>{{ step | replace('1.', '') | replace('2.', '') | replace('3.', '') | replace('4.', '') | replace('5.', '') | replace('6.', '') | replace('7.', '') | replace('8.', '') | replace('9.', '') | replace('10.', '') | replace('11.', '') }}</li>
+    {% endfor %}
+  </ol>
+
+  <a href="{{ url_for('list_recipes') }}" class="button is-link mt-4">Voltar</a>
+</div>
 {% endblock %}

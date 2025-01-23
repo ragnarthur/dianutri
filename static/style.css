@@ -122,6 +122,12 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
   text-align: center;
 }
+
+/* Ajustar o título da receita */
+.details-box h2.title {
+  margin-top: 7cm; /* Distância para afastar o título da navbar */
+}
+
 .details-box img {
   width: 300px;
   height: 300px;
@@ -175,6 +181,149 @@ h1, h2, h3, h4, h5, h6 {
 .button.is-success:hover {
   background-color: #218838;
 }
+
+/* ---------------------------------------------------------------------------
+   Estilização da Navbar
+--------------------------------------------------------------------------- */
+
+/* Estilos para a Navbar */
+.navbar {
+  height: 10px;  /* Ajuste para deixar a navbar mais fina */
+  line-height: 50px;  /* Centraliza o texto verticalmente */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.navbar .navbar-brand .navbar-item {
+  font-size: 1.5rem;  /* Tamanho de fonte ajustado */
+}
+
+.navbar .navbar-menu .navbar-item {
+  font-size: 1.2rem;  /* Tamanho de fonte ajustado para os itens */
+  padding: 0 10px;  /* Menor espaçamento entre os itens */
+}
+
+/* Esconde a navbar inicialmente */
+.navbar.hidden {
+  transform: translateY(-100%); /* Movimenta a navbar para fora da tela */
+  transition: transform 0.3s ease-in-out; /* Adiciona um efeito suave */
+}
+
+/* Quando a navbar for visível */
+.navbar:not(.hidden) {
+  transform: translateY(0);  /* Restaura a navbar para sua posição original */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Ajuste do botão burger para dispositivos móveis */
+.navbar-burger {
+  color: white;
+}
+
+
+
+/* ---------------------------------------------------------------------------
+   Estilização da página inicial (index)
+--------------------------------------------------------------------------- */
+
+/* Hero section com o fundo da imagem */
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding-top: 5rem; /* Adiciona um espaço extra no topo */
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+}
+
+/* Título da página */
+.hero .title {
+  font-size: 3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: fadeInUp 1s ease-out;
+  margin-top: -16rem; /* Ajusta a margem para mover o título mais para cima */
+}
+
+/* Subtítulo */
+.hero .subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+/* Botões da página inicial */
+.hero .buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero .button {
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero .button.is-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.hero .button.is-link {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.hero .button:hover {
+  transform: translateY(-5px);
+}
+
+.hero .button.is-primary:hover {
+  background-color: #0056b3;
+}
+
+.hero .button.is-link:hover {
+  background-color: #138496;
+}
+
+/* Animações para o título e subtítulo */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .hero .title {
+    font-size: 2rem;
+  }
+
+  .hero .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero .button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
 
 /* ---------------------------------------------------------------------------
    Ajustes adicionais para a página de receitas

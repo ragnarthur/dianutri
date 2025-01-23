@@ -5,10 +5,10 @@
   <title>{% block title %}DiaNutri{% endblock %}</title>
 
   <!-- Bulma CSS (CDN) -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-  >
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+  <!-- Font Awesome (Ícones) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
   <!-- CSS customizado (style.css acima) -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
@@ -18,10 +18,10 @@
 <body>
 
   <!-- Navbar Bulma -->
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-fixed-top is-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item has-text-weight-semibold" href="{{ url_for('index') }}">
-        DiaNutri
+        <i class="fas fa-apple-alt"></i> DiaNutri
       </a>
       <!-- Botão hamburger (mobile) -->
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
@@ -34,8 +34,8 @@
 
     <div id="navbarMenu" class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item" href="{{ url_for('list_foods') }}">Alimentos</a>
-        <a class="navbar-item" href="{{ url_for('list_recipes') }}">Receitas</a>
+        <a class="navbar-item has-text-weight-semibold" href="{{ url_for('list_foods') }}">Alimentos</a>
+        <a class="navbar-item has-text-weight-semibold" href="{{ url_for('list_recipes') }}">Receitas</a>
       </div>
     </div>
   </nav>
@@ -54,9 +54,38 @@
     });
   </script>
 
-  <!-- Conteúdo principal (a div .main-content empurra o rodapé pro final) -->
+  <!-- Script JS para esconder a navbar quando o mouse não estiver perto -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navbar = document.querySelector('.navbar');
+      let timer;
+
+      // Função para mostrar a navbar
+      function showNavbar() {
+        navbar.classList.remove('hidden');
+      }
+
+      // Função para esconder a navbar
+      function hideNavbar() {
+        navbar.classList.add('hidden');
+      }
+
+      // Detecta o movimento do mouse para mostrar a navbar quando o mouse se aproximar
+      document.addEventListener('mousemove', () => {
+        clearTimeout(timer); // Limpa o temporizador anterior
+        showNavbar();  // Mostra a navbar
+
+        // Configura o temporizador para esconder a navbar após 3 segundos de inatividade
+        timer = setTimeout(hideNavbar, 3000);
+      });
+
+      // Inicialmente, esconder a navbar
+      hideNavbar();
+    });
+  </script>
+
+  <!-- Conteúdo principal -->
   <div class="main-content">
-    <!-- "section" e "container" do Bulma para organizar conteúdo -->
     <section class="section">
       <div class="container">
         {% block content %}{% endblock %}

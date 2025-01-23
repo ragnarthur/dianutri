@@ -696,7 +696,140 @@ def seed_data():
         "Baixo índice glicêmico, rico em fibras e antioxidantes.",
         "Auxilia na saúde digestiva e no controle de glicemia.",
         "Pode ser consumido em saladas ou refogados.",
-        "100g de broto de bambu contém 27 calorias, 5g de carboidratos, 2,6g de proteína, 0,3g de gordura.")
+        "100g de broto de bambu contém 27 calorias, 5g de carboidratos, 2,6g de proteína, 0,3g de gordura."),
+
+         ("Araticum", "Fruta", 45, 
+         "Fruta rica em antioxidantes, fibras e vitaminas, com efeito antioxidante e anti-inflamatório.",
+         "Auxilia no controle da glicemia e melhora a saúde digestiva.",
+         "Ideal para sucos, smoothies ou consumido in natura.",
+         "100g de araticum contém 81 calorias, 23g de carboidratos, 2g de proteína, 0,5g de gordura."),
+
+         ("Bacaba", "Fruta", 40, 
+         "Fonte rica em carboidratos, fibras e antioxidantes.",
+         "Ajuda a controlar o colesterol e melhora a digestão.",
+         "Pode ser consumida in natura ou em sucos.",
+         "100g de bacaba contém 76 calorias, 18g de carboidratos, 1g de proteína, 0g de gordura."),
+
+         ("Bergamota", "Fruta", 38, 
+         "Rica em vitamina C, ajuda a fortalecer o sistema imunológico.",
+         "Auxilia no controle da glicemia e é rica em antioxidantes.",
+         "Ideal como lanche ou em sucos.",
+         "100g de bergamota contém 53 calorias, 13g de carboidratos, 1g de proteína, 0,2g de gordura."),
+
+         ("Brambleberry", "Fruta", 25, 
+         "Baixo índice glicêmico, rica em vitamina C e fibras.",
+         "Ajuda no controle de glicemia e melhora a digestão.",
+         "Ideal como lanche ou em sucos.",
+         "100g de brambleberry contém 43 calorias, 10g de carboidratos, 1g de proteína, 0,5g de gordura."),
+
+         ("Cabeludinha", "Fruta", 55, 
+         "Rica em antioxidantes e vitaminas, auxilia no combate aos radicais livres.",
+         "Ajuda na saúde ocular e promove a digestão.",
+         "Ideal para sucos ou em saladas.",
+         "100g de cabeludinha contém 40 calorias, 11g de carboidratos, 1g de proteína, 0,3g de gordura."),
+
+         ("Canola", "Oleaginosa", 10, 
+         "Óleo com baixo teor de gorduras saturadas, rico em ômega-3 e antioxidantes.",
+         "Promove a saúde cardiovascular e auxilia na redução da inflamação.",
+         "Ideal para temperar saladas ou para cozinhar.",
+         "100g de óleo de canola contém 884 calorias, 0g de carboidratos, 0g de proteína, 100g de gordura."),
+
+         ("Cenoura roxa", "Vegetal", 40, 
+         "Rica em antioxidantes e fibras, tem baixo índice glicêmico.",
+         "Ajuda na digestão, saúde ocular e controle de colesterol.",
+         "Pode ser consumida crua, cozida ou em sucos.",
+         "100g de cenoura roxa contém 45 calorias, 10g de carboidratos, 1g de proteína, 0,2g de gordura."),
+
+         ("Cipó de São João", "Erva", 0, 
+         "Possui propriedades anti-inflamatórias e calmantes.",
+         "Auxilia na melhora da digestão e controle da glicemia.",
+         "Pode ser consumido em chás ou como tempero.",
+         "100g de cipó de São João contém 60 calorias, 14g de carboidratos, 2g de proteína, 0,3g de gordura."),
+
+         ("Dendê", "Óleo", 10, 
+         "Óleo rico em ácidos graxos saturados e antioxidantes.",
+         "Auxilia na manutenção da saúde celular e controle do colesterol.",
+         "Ideal para cozinhar, principalmente na culinária nordestina.",
+         "100g de óleo de dendê contém 884 calorias, 0g de carboidratos, 0g de proteína, 100g de gordura."),
+
+         ("Escarola", "Vegetal", 10, 
+         "Fonte de fibras e antioxidantes, auxilia na digestão e controle de glicemia.",
+         "Ajuda no controle de peso e melhora a saúde intestinal.",
+         "Pode ser consumida crua em saladas ou refogada.",
+         "100g de escarola contém 18 calorias, 3,6g de carboidratos, 1,8g de proteína, 0,1g de gordura."),
+
+         ("Feijão verde", "Leguminosa", 30, 
+         "Rico em fibras e proteínas vegetais, com baixo índice glicêmico.",
+         "Promove saciedade e auxilia no controle do açúcar no sangue.",
+         "Ideal em sopas, saladas ou como acompanhamento.",
+         "100g de feijão verde contém 81 calorias, 15g de carboidratos, 5g de proteína, 0,5g de gordura."),
+
+         ("Graptopetalum paraguayense", "Erva", 0, 
+         "Planta com propriedades anti-inflamatórias, antioxidantes e calmantes.",
+         "Auxilia no controle da glicemia e melhora a digestão.",
+         "Pode ser consumido em chás ou como tempero.",
+         "100g de Graptopetalum paraguayense contém 30 calorias, 7g de carboidratos, 2g de proteína, 0,3g de gordura."),
+
+         ("Jambú", "Planta", 15, 
+         "Com propriedades analgésicas e anti-inflamatórias, ajuda na digestão.",
+         "Ideal para pessoas com problemas de digestão ou artrite.",
+         "Pode ser consumido em sopas ou como tempero.",
+         "100g de jambú contém 49 calorias, 10g de carboidratos, 5g de proteína, 0,5g de gordura."),
+
+         ("Jojoba", "Oleaginosa", 0, 
+         "Fonte de ácidos graxos essenciais, ideal para a saúde cardiovascular.",
+         "Ajuda no controle de glicemia e mantém a pele saudável.",
+         "Ideal como suplemento em vitaminas e shakes.",
+         "100g de jojoba contém 884 calorias, 0g de carboidratos, 0g de proteína, 100g de gordura."),
+
+         ("Sacha Inchi", "Oleaginosa", 0,
+         "Rica em ácidos graxos ômega-3, antioxidantes e proteínas.",
+         "Auxilia no controle da inflamação e na saúde do coração.",
+         "Pode ser consumida como semente ou em forma de óleo para temperos.",
+         "100g de Sacha Inchi contém 570 calorias, 8g de carboidratos, 30g de proteína, 49g de gordura."),
+
+         ("Graviola", "Fruta", 30,
+         "Rica em vitamina C, antioxidantes e fibras.",
+         "Ajuda a fortalecer o sistema imunológico e melhora a digestão.",
+         "Pode ser consumida in natura ou em sucos e smoothies.",
+         "100g de graviola contém 66 calorias, 16g de carboidratos, 1g de proteína, 0,3g de gordura."),
+
+         ("Berinjela japonesa", "Vegetal", 15,
+         "Baixíssimo índice glicêmico, rica em fibras e antioxidantes.",
+         "Promove a saciedade e melhora o controle de glicemia.",
+         "Pode ser consumida assada, grelhada ou em refogados.",
+         "100g de berinjela japonesa contém 24 calorias, 5,5g de carboidratos, 1g de proteína, 0,2g de gordura."),
+
+         ("Kiwano", "Fruta", 35,
+         "Rico em vitamina C, antioxidantes e água.",
+         "Ajuda na hidratação e fortalecimento do sistema imunológico.",
+         "Ideal consumido in natura ou em sucos.",
+         "100g de kiwano contém 44 calorias, 9g de carboidratos, 1g de proteína, 0g de gordura."),
+
+         ("Figo-da-índia", "Fruta", 42,
+         "Rico em fibras, vitamina C e antioxidantes.",
+         "Ajuda na digestão e no controle do colesterol.",
+         "Pode ser consumido in natura ou em sucos e sobremesas.",
+         "100g de figo-da-índia contém 50 calorias, 13g de carboidratos, 1g de proteína, 0g de gordura."),
+
+         ("Tamarindo", "Fruta", 48,
+         "Rico em vitamina C e antioxidantes.",
+         "Auxilia na digestão, combate a constipação e melhora o sistema imunológico.",
+         "Ideal para ser consumido in natura ou em sucos.",
+         "100g de tamarindo contém 239 calorias, 63g de carboidratos, 2g de proteína, 0,6g de gordura."),
+
+         ("Jabuticaba", "Fruta", 53,
+         "Rica em antioxidantes e vitamina C.",
+         "Auxilia no combate aos radicais livres e na saúde cardiovascular.",
+         "Pode ser consumida in natura ou em sucos.",
+         "100g de jabuticaba contém 50 calorias, 13g de carboidratos, 1g de proteína, 0g de gordura."),
+
+         ("Chá de hibisco", "Erva", 0,
+         "Rico em vitamina C, antioxidantes e antocianinas.",
+         "Auxilia no controle da pressão arterial e no emagrecimento.",
+         "Pode ser consumido como chá quente ou gelado.",
+         "100g de hibisco contém 46 calorias, 11g de carboidratos, 1g de proteína, 0g de gordura."),
+
     ]
 
     # Inserindo alimentos no banco

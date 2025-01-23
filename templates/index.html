@@ -3,19 +3,25 @@
 {% block title %}DiaNutri - Início{% endblock %}
 
 {% block content %}
-<div class="has-text-centered">
-  <h1 class="title">Bem-vindo ao DiaNutri</h1>
-  <p class="subtitle">
-    Seu guia de alimentação saudável e receitas para diabetes.
-  </p>
+<div class="hero is-fullheight" style="background-image: url('{{ url_for('static', filename='images/background/pagina_inicial.jpg') }}'); background-size: cover; background-position: center;">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-size-2-desktop is-size-3-mobile has-text-white has-text-shadow">
+        Bem-vindo ao DiaNutri
+      </h1>
+      <p class="subtitle is-size-4-desktop is-size-5-mobile has-text-white has-text-shadow">
+        Seu guia de alimentação saudável.
+      </p>
 
-  <div class="buttons is-centered">
-    <a href="{{ url_for('list_foods') }}" class="button is-primary">
-      Ver Alimentos
-    </a>
-    <a href="{{ url_for('list_recipes') }}" class="button is-link">
-      Ver Receitas
-    </a>
+      <div class="buttons is-centered mt-5">
+        <a href="{{ url_for('list_foods') }}" class="button is-primary is-large is-rounded">
+          Ver Alimentos
+        </a>
+        <a href="{{ url_for('list_recipes') }}" class="button is-link is-large is-rounded">
+          Ver Receitas
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}

@@ -22,9 +22,16 @@
     background: url('{{ url_for("static", filename="images/background/cozinhando.jpg") }}') no-repeat center center fixed;
     background-size: cover;
     padding: 2rem;
-    min-height: 100vh;
+    height: 100%; /* Garante que ocupe o tamanho total do container */
+    width: 100%;  /* Garante a largura total */
+    display: flex; /* Mantém o alinhamento interno */
+    flex-direction: column; /* Permite organizar conteúdo dentro */
   }
 
+  section.section {
+    padding: 0; /* Remove o padding extra para alinhar */
+    margin: 0;  /* Remove margens extras */
+  }
   .recipe-grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

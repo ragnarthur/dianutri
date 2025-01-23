@@ -22,5 +22,11 @@
   </ol>
 
   <a href="{{ url_for('list_recipes') }}" class="button is-link mt-4">Voltar</a>
+
+  {% if next_recipe %}
+    <a href="{{ url_for('recipe_detail', recipe_id=next_recipe['id']) }}" class="button is-link mt-4">Próximo</a>
+  {% else %}
+    <p>Não há mais receitas.</p>
+  {% endif %}
 </div>
 {% endblock %}

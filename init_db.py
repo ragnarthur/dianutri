@@ -943,7 +943,7 @@ def seed_data():
         5. Dobre as panquecas e sirva quente.""",
      "Uma opção leve e nutritiva para refeições principais."),
 
-    ("Bolinho de batata-doce com frango",
+    ("Bolinho de batata doce e frango",
      "Batata-doce, Peito de frango, Azeite, Cebola, Alho, Sal, Pimenta",
      """1. Cozinhe a batata-doce até ficar macia e amasse formando um purê.
         2. Cozinhe o peito de frango, desfie e tempere com cebola, alho, sal e pimenta.
@@ -1118,7 +1118,124 @@ def seed_data():
      """1. Cozinhe a quinoa no caldo de legumes.
         2. Refogue os cogumelos no azeite com alho.
         3. Misture a quinoa com os cogumelos e sirva.""",
-     "Um prato sofisticado, rico em proteínas e fibras.")
+     "Um prato sofisticado, rico em proteínas e fibras."),
+
+     ("Cuscuz de quinoa com frango desfiado",
+     "Quinoa, Frango desfiado, Cenoura ralada, Tomate-cereja, Azeite, Sal, Salsinha",
+     """1. Cozinhe a quinoa em água com sal até que os grãos fiquem macios. Reserve.
+        2. Refogue o frango desfiado com um fio de azeite e tempere com sal.
+        3. Misture a quinoa, o frango, a cenoura ralada e os tomates-cereja cortados ao meio.
+        4. Finalize com azeite e salsinha picada. Sirva morno ou frio.""",
+     "Uma refeição leve e nutritiva, com proteínas magras e carboidratos complexos."),
+
+    ("Omelete de claras com espinafre e cogumelos",
+     "Claras de ovo, Espinafre, Cogumelos fatiados, Azeite, Sal, Pimenta",
+     """1. Aqueça o azeite em uma frigideira e refogue os cogumelos e o espinafre até murcharem.
+        2. Bata as claras de ovo com uma pitada de sal e pimenta.
+        3. Despeje as claras sobre os legumes refogados e cozinhe em fogo baixo até firmar.
+        4. Dobre ao meio e sirva quente.""",
+     "Uma refeição leve e rica em proteínas, perfeita para o café da manhã ou jantar."),
+
+    ("Salada morna de grão-de-bico e abobrinha",
+     "Grão-de-bico cozido, Abobrinha, Alho, Azeite, Limão, Salsinha, Sal",
+     """1. Corte a abobrinha em rodelas finas e grelhe em uma frigideira com azeite e alho picado.
+        2. Misture o grão-de-bico cozido com a abobrinha grelhada.
+        3. Tempere com suco de limão, azeite, sal e salsinha picada.
+        4. Sirva morno como prato principal ou acompanhamento.""",
+     "Rico em fibras e proteínas vegetais, ideal para o controle glicêmico."),
+
+    ("Creme de chuchu com alho-poró",
+     "Chuchu, Alho-poró, Caldo de legumes sem sal, Azeite, Sal, Pimenta",
+     """1. Descasque e corte o chuchu em cubos. Fatie o alho-poró.
+        2. Refogue o alho-poró em azeite até dourar levemente.
+        3. Adicione o chuchu e o caldo de legumes e cozinhe até os ingredientes ficarem macios.
+        4. Bata tudo no liquidificador até obter um creme liso. Tempere com sal e pimenta e sirva quente.""",
+     "Uma sopa leve, nutritiva e de fácil preparo, com baixo índice glicêmico."),
+
+   ("Bolinho de espinafre com ricota",
+     "Espinafre, Ricota, Ovo, Farinha de aveia, Sal, Pimenta-do-reino, Azeite",
+     """1. Lave e pique o espinafre. Refogue rapidamente em uma frigideira com um fio de azeite até murchar. Deixe esfriar.
+        2. Em uma tigela, misture o espinafre refogado, a ricota amassada, o ovo e a farinha de aveia.
+        3. Tempere com sal e pimenta a gosto e misture até formar uma massa consistente.
+        4. Modele pequenos bolinhos e disponha em uma assadeira untada.
+        5. Asse em forno pré-aquecido a 180°C por 20 minutos ou até dourar.
+        6. Sirva quente como acompanhamento ou lanche saudável.""",
+     "Bolinho assado, rico em fibras e proteínas, ideal para um lanche nutritivo."),
+
+     ("Torta de berinjela com queijo",
+     "Berinjela, Queijo branco, Ovo, Tomate, Cebola, Azeite, Sal, Pimenta",
+     """1. Corte a berinjela em fatias finas e grelhe até dourar.
+        2. Bata os ovos e tempere com sal e pimenta.
+        3. Monte camadas de berinjela, queijo branco e tomate em um refratário.
+        4. Despeje os ovos batidos por cima.
+        5. Asse em forno pré-aquecido a 180°C por 25 minutos.
+        6. Sirva quente.""",
+     "Uma torta leve, rica em fibras e proteínas, com baixo índice glicêmico."),
+
+    ("Espetinhos de frango com vegetais",
+     "Peito de frango, Pimentão, Cebola, Abobrinha, Azeite, Sal, Páprica, Pimenta",
+     """1. Corte o frango e os vegetais em cubos médios.
+        2. Tempere com azeite, sal, páprica e pimenta.
+        3. Monte os espetinhos alternando o frango e os vegetais.
+        4. Grelhe em fogo médio até dourar e cozinhar o frango por completo.
+        5. Sirva acompanhado de salada.""",
+     "Prático e saudável, rico em proteínas e fibras."),
+
+    ("Tabule de couve-flor",
+     "Couve-flor, Tomate, Pepino, Salsinha, Hortelã, Limão, Azeite, Sal",
+     """1. Triture a couve-flor no processador até obter textura de arroz.
+        2. Misture com tomate picado, pepino, salsinha e hortelã.
+        3. Tempere com azeite, suco de limão e sal.
+        4. Sirva frio como entrada ou acompanhamento.""",
+     "Leve e refrescante, com baixo índice glicêmico."),
+
+    ("Gratinado de abóbora com cottage",
+     "Abóbora, Queijo cottage, Alho, Azeite, Sal, Pimenta, Ervas frescas",
+     """1. Cozinhe a abóbora até amolecer e amasse formando um purê.
+        2. Tempere com sal, pimenta e ervas frescas.
+        3. Em um refratário, coloque o purê e cubra com queijo cottage.
+        4. Asse em forno pré-aquecido a 180°C por 20 minutos.
+        5. Sirva quente.""",
+     "Rico em fibras e proteínas, ideal como acompanhamento."),
+
+    ("Salada de grãos com rúcula",
+     "Grãos de trigo, Rúcula, Tomate seco, Queijo parmesão ralado, Limão, Azeite, Sal",
+     """1. Cozinhe os grãos de trigo até ficarem macios.
+        2. Misture com rúcula, tomate seco e queijo parmesão ralado.
+        3. Tempere com azeite, suco de limão e sal.
+        4. Sirva como prato principal ou acompanhamento.""",
+     "Uma salada rica em fibras e nutrientes."),
+
+    ("Omelete com legumes assados",
+     "Ovos, Abobrinha, Cenoura, Pimentão, Azeite, Sal, Pimenta",
+     """1. Corte os legumes em tiras e asse com azeite, sal e pimenta por 20 minutos.
+        2. Bata os ovos e misture com os legumes assados.
+        3. Cozinhe em uma frigideira até firmar dos dois lados.
+        4. Sirva quente.""",
+     "Opção prática e rica em proteínas e vitaminas."),
+
+    ("Ceviche de tilápia",
+     "Tilápia, Limão, Cebola roxa, Coentro, Azeite, Sal, Pimenta",
+     """1. Corte o peixe em cubos pequenos e tempere com suco de limão, sal e pimenta.
+        2. Adicione cebola roxa em fatias finas e coentro picado.
+        3. Deixe marinar na geladeira por 30 minutos antes de servir.""",
+     "Leve e refrescante, rico em proteínas e antioxidantes."),
+
+    ("Bolinho de abóbora com carne moída",
+     "Abóbora, Carne moída magra, Farinha de aveia, Sal, Pimenta, Azeite",
+     """1. Cozinhe a abóbora até amolecer e amasse formando um purê.
+        2. Misture com carne moída refogada e farinha de aveia.
+        3. Modele os bolinhos e asse em forno pré-aquecido a 200°C por 20 minutos.
+        4. Sirva com salada verde.""",
+     "Uma refeição leve, rica em proteínas e com baixo índice glicêmico."),
+
+    ("Creme de brócolis e espinafre",
+     "Brócolis, Espinafre, Caldo de legumes sem sal, Azeite, Alho, Sal, Pimenta",
+     """1. Cozinhe o brócolis e o espinafre no caldo de legumes até amolecerem.
+        2. Bata tudo no liquidificador até formar um creme.
+        3. Refogue alho no azeite, adicione o creme e aqueça.
+        4. Tempere com sal e pimenta. Sirva quente.""",
+     "Uma sopa cremosa e nutritiva, ideal para o jantar."),
 
 ]
 

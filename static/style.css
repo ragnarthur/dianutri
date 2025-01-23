@@ -182,18 +182,24 @@ h1, h2, h3, h4, h5, h6 {
 /* Título da página */
 .page-background h2 {
   font-size: 2rem;
-  color: #bed1ec; /* Azul escuro */
+  color: #bed1ec;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Melhor contraste */
-  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 1rem 0; /* Reduz margens para evitar lacunas adicionais */
 }
+
+section.section {
+  padding: 0;
+  margin: 0;
+}
+
 
 /* Grid de cards */
 .recipe-grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
-  padding: 2rem;
+  padding: 2rem; /* Este padding garante espaçamento interno */
 }
 
 /* Estilo dos cartões de receitas */

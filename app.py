@@ -6,29 +6,69 @@ app.config['DATABASE'] = 'database.db'
 
 # Dicionário de mapeamento de imagens para receitas
 RECIPE_IMAGE_MAP = {
+    "Abobrinha recheada com carne moída": "abobrinha_carne.jpg",
     "Arroz de couve-flor": "arroz_couveflor.jpg",
+    "Arroz integral com grão-de-bico e legumes": "arroz_integral_grao.jpg",
     "Aveia com maçã e canela": "aveia_maca.jpg",
-    "Bolo de banana saudável": "bolo_banana.jpg",
-    "Bowl de frutas vermelhas": "bowl_frutas.jpg",
+    "Biscoito de aveia e banana": "biscoito_aveia.jpg",
+    "Biscoito salgado de grão-de-bico": "biscoito_grao.jpg",
+    "Bolinho de abóbora com carne moída": "bolinho_abobora_carne.jpg",
+    "Bolinho de batata doce e frango": "bolinho_bata_frango.jpg",
+    "Bolinho de espinafre com ricota": "bolinho_espinafre_ricota.jpg",
+    "Bolo de cenoura com farinha de amêndoas": "bolo_cenoura_farinha_amendoas.jpg",
+    "Bolo de maçã com farinha de coco": "bolo_maca_farinha_coco.jpg",
     "Bowl de quinoa com legumes": "bowl_legumes.jpg",
-    "Chá verde gelado com limão": "cha_verde.jpg",
+    "Ceviche de tilápia": "ceviche_tilapia.jpg",
+    "Creme de abacate com cacau": "creme_abacate_cacau.jpg",
+    "Creme de brócolis e espinafre": "creme_brocolis_espinafre.jpg",
+    "Creme de chuchu com alho-poró": "creme_chuchu_poro.jpg",
+    "Crepioca recheada com frango e espinafre": "crepioca_recheada_frangoespinafre.jpg",
+    "Cuscuz de quinoa com frango desfiado": "cuscuz_quinoa_frango.jpg",
+    "Cuscuz de quinoa com legumes": "cuscuz_quinoa_legumes.jpg",
     "Espaguete de abobrinha": "espaguete_abobrinha.jpg",
+    "Espetinhos de frango com vegetais": "espetinho_frango_legumes.jpg",
+    "Frango ao curry com leite de coco": "frango_curry_coco.jpg",
     "Frango grelhado com brócolis": "frango_brocolis.jpg",
-    "Lentilha com legumes": "lentilha_legumes.jpg",
-    "Mousse de morango saudável": "mousseu_morango.jpg",
+    "Gratinado de abóbora com cottage": "gratinado_abobora_cottage.jpg",
+    "Hambúrguer de grão-de-bico": "hamburguer_grao.jpg",
+    "Hambúrguer de lentilha": "hamburguer_lentilha.jpg",
+    "Iogurte com frutas vermelhas e chia": "iogurte_frutas_chia.jpg",
+    "Macarrão de abobrinha ao pesto": "macarrao_abobrinha_pesto.jpg",
+    "Mousse de chocolate com abacate": "mousse_chocolate_abacate.jpg",
+    "Omelete com legumes assados": "omelete_legumes_assados.jpg",
+    "Omelete de claras com espinafre e cogumelos": "omelete_espinafre_cogumelos.jpg",
+    "Omelete de espinafre com queijo branco": "omelete_espinafre_queijo.jpg",
     "Panqueca de banana e aveia": "panqueca_banana.jpg",
+    "Panqueca de espinafre com cogumelos": "panqueca_espinafre_cogumelos.jpg",
+    "Panqueca de espinafre com ricota": "panqueca_espinafre_ricota.jpg",
+    "Pasta de ricota com ervas": "pasta_ricota_ervas.jpg",
+    "Patê de grão-de-bico com ervas": "pate_grao_bico.jpg",
     "Peixe assado com legumes": "peixe_assado.jpg",
-    "Peixe com arroz de quinoa": "peixe_arroz.jpg",
-    "Quibe de abóbora com ricota": "quibe_abobora.jpg",
+    "Purê de couve-flor": "pure_couve_flor.jpg",
+    "Pão de aveia e linhaça": "pao_aveia_linhaca.jpg",  
+    "Quibe assado de abóbora": "quibe_assado_abobora.jpg",
+    "Risoto de quinoa com cogumelos": "risoto_quinoa_legumes.jpg",
     "Salada de abacate com feijão preto": "salada_abacate_feijao.jpg",
-    "Salada de grão-de-bico": "salada_grao_bico.jpg",
-    "Sopa de lentilha com legumes": "sopa_lentilhas_legumes.jpg",
-    "Sopa detox de abóbora": "sopa_detox_abobora.jpg",
-    "Taco de peixe": "taco_peixe.jpg",
-    "Torta de legumes": "torta_maca.jpg",
-    "Torta de maçã sem açúcar": "torta_maca.jpg",
-    "Wrap de frango com alface": "wrap_frango.jpg",
-
+    "Salada de folhas verdes com abacate e nozes": "salada_verde_legumes_abacate.jpg",
+    "Salada de grãos com rúcula": "salada_graos_rucula.jpg",
+    "Salada de pepino com iogurte e hortelã": "salada_pepino_iogurte.jpg",
+    "Salada de quinoa com abóbora assada": "salada_quinoa_abobora.jpg",
+    "Salada de quinoa com legumes": "salada_quinoa_legumes.jpg",
+    "Salada de rúcula com abacate e sementes de girassol": "salada_rucula_girassol.jpg",
+    "Salada morna de grão-de-bico e abobrinha": "salada_morna_abobora.jpg", 
+    "Salada morna de lentilha com espinafre": "salada_morna_lentilha.jpg",
+    "Salmão grelhado com molho de limão": "salmao_grelhado_molholimao.jpg",
+    "Salmão grelhado com molho de maracujá": "salmao_molhomaracuja.jpg",
+    "Smoothie de abacate e espinafre": "smoothie_abacate_espinafre.jpg",
+    "Smoothie verde detox": "smoothie_detox.jpg",
+    "Sopa cremosa de abobrinha": "sopa_cremosa_abobrinha.jpg",
+    "Sopa de couve-flor com alho-poró": "sopa_couve_flor_alhoporo.jpg",
+    "Sopa de lentilha com legumes": "sopa_lentilha_legumes.jpg",
+    "Tabule de couve-flor": "tabule_couve_flor.jpg",
+    "Tartar de atum com abacate": "tartar_atum_abacate.jpg",
+    "Torta de berinjela com queijo": "torta_berinjela_queijo.jpg",
+    "Torta salgada de legumes com farinha de aveia": "torta_farinha_aveia.jpg",
+    "Wrap de alface com frango desfiado": "wrap_alface_frango.jpg",
 }
 
 # Dicionário de mapeamento de imagens para alimentos
@@ -197,14 +237,25 @@ def list_recipes():
 @app.route('/recipe/<int:recipe_id>')
 def recipe_detail(recipe_id):
     """
-    Detalhes de uma receita específica com imagem.
+    Detalhes de uma receita específica com imagem e botão "Próximo".
     """
     with get_db_connection() as conn:
         recipe = conn.execute('SELECT * FROM recipes WHERE id = ?', (recipe_id,)).fetchone()
+
+        # Buscar a próxima receita com base no ID
+        next_recipe = conn.execute('''
+            SELECT * FROM recipes
+            WHERE id > ?
+            ORDER BY id ASC LIMIT 1
+        ''', (recipe_id,)).fetchone()
+
     if recipe is None:
         return render_template('404.html', message="Receita não encontrada."), 404
+
     image = RECIPE_IMAGE_MAP.get(recipe["title"], "default.jpg")  # Usar imagem padrão se não houver mapeamento
-    return render_template('recipe_detail.html', recipe=recipe, image=image)
+
+    # Passar a próxima receita (se houver) para o template
+    return render_template('recipe_detail.html', recipe=recipe, image=image, next_recipe=next_recipe)
 
 if __name__ == '__main__':
     app.run(debug=True)

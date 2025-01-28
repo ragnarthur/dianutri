@@ -830,7 +830,129 @@ def seed_data():
          "Pode ser consumido como chá quente ou gelado.",
          "100g de hibisco contém 46 calorias, 11g de carboidratos, 1g de proteína, 0g de gordura."),
 
+         ("Açaí (sem açúcar)", "Fruta", 35,
+            "Rico em antioxidantes e gorduras saudáveis. Auxilia na saúde cardiovascular e no sistema imunológico.",
+            "Ajuda na recuperação muscular e na redução de inflamações.",
+            "Pode ser consumido em tigelas ou smoothies, sem adição de açúcar.",
+            "100g de açaí contém 70 calorias, 6g de carboidratos, 1g de proteína e 4g de gordura."),
+
+         ("Camu-camu", "Fruta", 20,
+                  "Altíssimo teor de vitamina C, antioxidantes e propriedades anti-inflamatórias.",
+                  "Promove a imunidade e combate o envelhecimento celular.",
+                  "Pode ser consumido em sucos, suplementos ou in natura.",
+                  "100g contém 15 calorias, 4g de carboidratos, 0,5g de proteína, 0g de gordura."),
+
+         ("Mangostão", "Fruta", 42,
+                  "Fonte de antioxidantes (xantonas), promove a saúde digestiva e imunológica.",
+                  "Auxilia no combate a inflamações.",
+                  "Consumido in natura ou em sucos.",
+                  "100g contém 73 calorias, 18g de carboidratos, 0,6g de proteína, 0g de gordura."),
+
+         ("Farinha de coco", "Farinha", 35,
+                  "Rica em fibras, baixa em carboidratos e com baixo impacto glicêmico.",
+                  "Ajuda no controle da glicemia e na saciedade.",
+                  "Pode ser usada em panquecas, bolos ou pães.",
+                  "100g contém 320 calorias, 10g de carboidratos, 20g de proteína, 8g de gordura."),
+
+         ("Lúpulo (em pó)", "Erva", 0,
+                  "Possui propriedades calmantes e antioxidantes, auxilia no controle da insônia e do estresse.",
+                  "Contribui para a saúde intestinal e melhora o sistema imunológico.",
+                  "Usado em chás ou suplementos.",
+                  "100g contém 80 calorias, 10g de carboidratos, 2g de proteína, 0g de gordura."),
+
+         ("Farinha de banana verde", "Farinha", 30,
+                  "Rica em amido resistente, auxilia no controle da glicemia e na saúde intestinal.",
+                  "Promove saciedade e ajuda na flora intestinal.",
+                  "Pode ser usada em vitaminas, pães e bolos.",
+                  "100g contém 90 calorias, 22g de carboidratos, 1g de proteína, 0,3g de gordura."),
+
+         ("Pupunha", "Tubérculo", 45,
+                  "Fonte de fibras, betacaroteno e energia.",
+                  "Ajuda na saúde ocular e no controle da glicemia.",
+                  "Pode ser consumido cozido ou em saladas.",
+                  "100g contém 177 calorias, 29g de carboidratos, 2g de proteína, 4g de gordura."),
+
+         ("Pequi", "Fruta", 55,
+                  "Rico em antioxidantes, gorduras saudáveis e vitamina A.",
+                  "Auxilia na saúde ocular e no combate a inflamações.",
+                  "Pode ser consumido em pratos tradicionais ou em conserva.",
+                  "100g contém 205 calorias, 13g de carboidratos, 2g de proteína, 18g de gordura."),
+
+         ("Cupuaçu", "Fruta", 40,
+         "Rico em antioxidantes, vitaminas A, B e C, além de fibras.",
+         "Ajuda na saúde da pele, combate os radicais livres e melhora a imunidade.",
+         "Pode ser consumido em sucos, sobremesas ou in natura.",
+         "100g contém 72 calorias, 15g de carboidratos, 1g de proteína, 0,5g de gordura."),
+
+         ("Murici", "Fruta", 30,
+                  "Fonte de vitamina C, cálcio e antioxidantes.",
+                  "Ajuda no fortalecimento do sistema imunológico e saúde óssea.",
+                  "Pode ser consumido in natura ou em sucos e sobremesas.",
+                  "100g contém 98 calorias, 16g de carboidratos, 2g de proteína, 1g de gordura."),
+
+         ("Baru", "Oleaginosa", 15,
+                  "Rico em proteínas, fibras e gorduras boas (ômega-9).",
+                  "Auxilia no controle do colesterol e promove saciedade.",
+                  "Pode ser consumido como snack ou em receitas.",
+                  "100g contém 556 calorias, 16g de carboidratos, 24g de proteína, 42g de gordura."),
+
+         ("Uva-passa", "Fruta", 65,
+                  "Fonte de energia rápida, rica em antioxidantes e fibras.",
+                  "Auxilia na digestão e combate a constipação.",
+                  "Pode ser usada em saladas, sobremesas ou consumida como lanche.",
+                  "100g contém 299 calorias, 79g de carboidratos, 3g de proteína, 0,5g de gordura."),
+
+         ("Semente de girassol", "Semente", 20,
+                  "Rica em vitamina E, magnésio e gorduras saudáveis.",
+                  "Ajuda na saúde do coração e promove a saciedade.",
+                  "Pode ser consumida em saladas, granolas ou como snack.",
+                  "100g contém 584 calorias, 20g de carboidratos, 20g de proteína, 51g de gordura."),
+
+         ("Coco seco", "Fruta", 45,
+                  "Rico em gorduras boas, fibras e minerais como ferro e potássio.",
+                  "Ajuda na saciedade e melhora a saúde intestinal.",
+                  "Pode ser consumido in natura, ralado ou em receitas.",
+                  "100g contém 354 calorias, 15g de carboidratos, 3g de proteína, 33g de gordura."),
+
+         ("Jatobá", "Fruta", 25,
+               "Fonte de fibras, antioxidantes e minerais como cálcio e ferro.",
+               "Auxilia no controle da glicemia e melhora a saúde intestinal.",
+               "Pode ser consumido em forma de farinha ou in natura.",
+               "100g contém 125 calorias, 28g de carboidratos, 3g de proteína, 0,8g de gordura."),
+
+         ("Carambola", "Fruta", 25,
+               "Rica em vitamina C, fibras e antioxidantes.",
+               "Ajuda na digestão e combate os radicais livres.",
+               "Pode ser consumida in natura ou em sucos.",
+               "100g contém 31 calorias, 7g de carboidratos, 1g de proteína, 0,3g de gordura."),
+
+         ("Tucumã", "Fruta", 40,
+               "Rico em ômega-3, vitamina A e fibras.",
+               "Ajuda na saúde cardiovascular e ocular.",
+               "Pode ser consumido in natura ou em preparações regionais.",
+               "100g contém 262 calorias, 14g de carboidratos, 3g de proteína, 23g de gordura."),
+
+         ("Bacaba", "Fruta", 40,
+         "Rica em antioxidantes, vitamina C e ácidos graxos essenciais.",
+         "Auxilia na saúde cardiovascular e no combate ao envelhecimento precoce.",
+         "Pode ser consumida em sucos, sobremesas ou como licor.",
+         "100g contém 76 calorias, 19g de carboidratos, 1g de proteína, 0g de gordura."),
+
+         ("Castanha-do-Pará", "Oleaginosa", 15,
+         "Rica em selênio, gorduras saudáveis e proteínas.",
+         "Ajuda no fortalecimento do sistema imunológico e combate a inflamação.",
+         "Pode ser consumida in natura ou em receitas.",
+         "100g contém 656 calorias, 12g de carboidratos, 14g de proteína, 66g de gordura."),
+    
+         ("Noni", "Fruta", 25,
+         "Fonte de vitamina C, antioxidantes e minerais como cálcio e potássio.",
+         "Ajuda na melhora da digestão, no fortalecimento imunológico e na saúde cardiovascular.",
+         "Pode ser consumido em sucos, chás ou como suplemento.",
+         "100g contém 44 calorias, 11g de carboidratos, 0,4g de proteína, 0,3g de gordura."),
+
+         
     ]
+
 
     # Inserindo alimentos no banco
     cursor.executemany('''

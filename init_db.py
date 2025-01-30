@@ -950,8 +950,130 @@ def seed_data():
          "Pode ser consumido em sucos, chás ou como suplemento.",
          "100g contém 44 calorias, 11g de carboidratos, 0,4g de proteína, 0,3g de gordura."),
 
-         
-    ]
+    ("Beldroega", "Vegetal", 15,
+     "Planta comestível rica em ômega-3, fibras e nutrientes antioxidantes.",
+     "Auxilia na redução de inflamações e contribui para a saúde cardiovascular.",
+     "Pode ser adicionada crua em saladas ou refogada com outros vegetais.",
+     "100g de beldroega contém aproximadamente 16 calorias, 3.4g de carboidratos, 1.3g de proteína, 0.1g de gordura."),
+
+    ("Sorgo", "Cereal", 55,
+     "Grão integral naturalmente isento de glúten, rico em fibras e proteínas.",
+     "Ajuda na manutenção de níveis saudáveis de glicose e na saciedade.",
+     "Pode ser usado como substituto do arroz, em sopas, saladas e farofas.",
+     "100g de sorgo cozido contém cerca de 143 calorias, 31g de carboidratos, 5g de proteínas e 1.6g de gordura."),
+
+    ("Cará", "Tubérculo", 55,
+     "Semelhante ao inhame, apresenta carboidratos complexos e baixo índice glicêmico.",
+     "Contribui para a saúde intestinal e controle de glicemia.",
+     "Pode ser consumido cozido, em purês ou refogado em cubos.",
+     "100g de cará contém aproximadamente 97 calorias, 23g de carboidratos, 1.5g de proteína e 0g de gordura."),
+
+    ("Fava", "Leguminosa", 32,
+     "Grão rico em proteínas, fibras, vitaminas do complexo B e minerais.",
+     "Auxilia no controle glicêmico e promove saciedade, contribuindo para a saúde cardiovascular.",
+     "Pode ser cozida e adicionada a saladas, sopas ou refogada com temperos.",
+     "100g de fava cozida contém cerca de 110 calorias, 19g de carboidratos, 7.6g de proteína e 0.5g de gordura."),
+
+    ("Mascarpone", "Laticínio", 0,
+     "Queijo cremoso e suave, rico em gorduras e sabor marcante.",
+     "Ajuda a fornecer energia e contribui para a saciedade, quando consumido com moderação.",
+     "Ideal para sobremesas, molhos ou como base de cremes salgados ou doces.",
+     "100g de mascarpone contém cerca de 435 calorias, 4.6g de carboidratos, 4.4g de proteína e 44g de gordura."),
+
+    ("Amaranto", "Cereal", 40,
+     "Pseudocereal rico em proteínas completas, fibras e minerais como cálcio e ferro.",
+     "Ajuda na regulação de glicemia e promove saúde óssea.",
+     "Pode ser usado como substituto de arroz, em mingaus ou na forma de flocos.",
+     "100g de amaranto em grãos contém cerca de 371 calorias, 65g de carboidratos, 14g de proteína e 7g de gordura."),
+
+    ("Agrião", "Vegetal", 15,
+     "Folha verde escura, rica em vitamina C, ferro e antioxidantes.",
+     "Auxilia no fortalecimento imunológico e contribui para a saúde dos ossos.",
+     "Pode ser consumido em saladas, refogados leves ou sucos detox.",
+     "100g de agrião contém cerca de 11 calorias, 1.3g de carboidratos, 2.3g de proteína e 0.1g de gordura."),
+
+    ("Painço", "Cereal", 55,
+     "Grão integral sem glúten, fonte de proteínas vegetais, fibras e minerais.",
+     "Promove saciedade e ajuda no controle da glicemia.",
+     "Pode ser cozido e usado em saladas, sopas e como substituto de arroz.",
+     "100g de painço cozido contém aproximadamente 119 calorias, 23g de carboidratos, 3.5g de proteína e 1g de gordura."),
+
+    ("Farinha de centeio", "Farinha", 40,
+     "Farinha integral rica em fibras, proteínas e vitaminas do complexo B.",
+     "Auxilia na regulação do açúcar no sangue e na saúde intestinal.",
+     "Pode ser usada em pães, panquecas e tortas, substituindo parte da farinha de trigo.",
+     "100g de farinha de centeio contém cerca de 335 calorias, 73g de carboidratos, 10g de proteína e 2g de gordura."),
+
+    ("Trigo sarraceno (buckwheat)", "Cereal", 54,
+     "Pseudocereal sem glúten, rico em aminoácidos essenciais, fibras e minerais.",
+     "Ajuda no controle de glicemia, promove saciedade e saúde cardiovascular.",
+     "Pode ser consumido cozido, em forma de mingau ou como farinha em receitas diversas.",
+     "100g de trigo sarraceno cozido contém cerca de 92 calorias, 20g de carboidratos, 3.4g de proteína e 0.6g de gordura."),
+
+    ("Gergelim preto", "Semente", 14,
+     "Semente rica em gorduras boas, proteínas e antioxidantes, com sabor mais intenso que o gergelim branco.",
+     "Contribui para a saúde do coração, ossos e auxilia no controle de glicemia.",
+     "Pode ser usado para polvilhar pães, saladas e sobremesas.",
+     "100g de gergelim preto contém aproximadamente 568 calorias, 25g de carboidratos, 17g de proteína, 48g de gordura."),
+
+    ("Abiu", "Fruta", 25,
+     "Fruta tropical de polpa macia, rica em vitamina C e antioxidantes.",
+     "Ajuda no fortalecimento imunológico e combate radicais livres.",
+     "Pode ser consumido in natura ou em sucos e sobremesas.",
+     "100g de abiu contém em média 60 calorias, 13g de carboidratos, 1g de proteína, 0g de gordura."),
+
+    ("Jambo", "Fruta", 30,
+     "Fruta de sabor suave, rica em vitamina C, fibras e antioxidantes.",
+     "Auxilia no controle do colesterol, glicemia e saúde digestiva.",
+     "Consumido in natura ou em sucos e saladas de frutas.",
+     "100g de jambo contém cerca de 25 calorias, 6g de carboidratos, 0.6g de proteína, 0.3g de gordura."),
+
+    ("Seriguela", "Fruta", 55,
+     "Fruta tropical doce, rica em vitamina A, fibras e compostos antioxidantes.",
+     "Ajuda na saúde ocular, digestiva e imunológica.",
+     "Pode ser consumida in natura ou em geleias e sucos.",
+     "100g de seriguela contém aproximadamente 76 calorias, 19g de carboidratos, 1g de proteína e 0g de gordura."),
+
+    ("Tayberry", "Fruta", 25,
+     "Híbrido de amora e framboesa, com sabor doce e ligeiramente ácido, rico em vitamina C e antioxidantes.",
+     "Auxilia no combate a inflamações e no controle de glicemia.",
+     "Pode ser consumido fresco, em geleias ou sobremesas.",
+     "100g de tayberry contém aproximadamente 50 calorias, 12g de carboidratos, 1g de proteína, 0.5g de gordura."),
+
+    ("Figo turco (seco)", "Fruta", 35,
+     "Versão seca do figo, rica em fibras, minerais e açúcares naturais.",
+     "Contribui para a saúde intestinal e melhora o trânsito digestivo.",
+     "Ideal como lanche ou adicionado em pães, bolos e saladas.",
+     "100g de figo turco seco contém cerca de 249 calorias, 64g de carboidratos, 3.3g de proteína e 0.9g de gordura."),
+
+    ("Cará roxo", "Tubérculo", 50,
+     "Variedade de cará com coloração roxa, rica em antioxidantes e fibras.",
+     "Ajuda no controle da glicemia e promove saúde intestinal.",
+     "Pode ser consumido cozido, assado ou em purês, semelhante à batata-doce.",
+     "100g de cará roxo contém aproximadamente 98 calorias, 24g de carboidratos, 1.4g de proteína, 0g de gordura."),
+
+    ("Feijão rosinha", "Leguminosa", 35,
+     "Variedade de feijão de coloração rosada, rico em proteínas e fibras.",
+     "Auxilia na saciedade e no controle de glicemia, além de fornecer minerais importantes.",
+     "Pode ser consumido em sopas, saladas e acompanhamentos.",
+     "100g de feijão rosinha cozido contém cerca de 127 calorias, 23g de carboidratos, 8g de proteína, 0.4g de gordura."),
+
+    ("Farinha de castanha", "Farinha", 20,
+     "Feita a partir de castanhas moídas, é rica em gorduras boas, proteínas e minerais.",
+     "Ajuda no controle de glicemia e na saciedade, sendo alternativa sem glúten.",
+     "Pode ser utilizada em pães, bolos, panquecas e para empanar carnes e legumes.",
+     "100g de farinha de castanha contém cerca de 580 calorias, 18g de carboidratos, 19g de proteína e 50g de gordura."),
+
+    ("Maxixe", "Vegetal", 15,
+     "Vegetal típico de clima quente, com baixíssimo índice glicêmico e rico em vitaminas e minerais.",
+     "Promove a saúde digestiva e auxilia no controle da glicemia devido ao alto teor de fibras.",
+     "Pode ser consumido cozido, em ensopados ou refogado, combinando com temperos leves.",
+     "100g de maxixe contém aproximadamente 14 calorias, 2.8g de carboidratos, 1g de proteína e 0g de gordura."),
+
+
+]
+
+
 
 
     # Inserindo alimentos no banco
@@ -1491,6 +1613,282 @@ def seed_data():
         3. Refogue alho no azeite, adicione o creme e aqueça.
         4. Tempere com sal e pimenta. Sirva quente.""",
      "Uma sopa cremosa e nutritiva, ideal para o jantar."),
+
+      ("Tapioca de Frango com Requeijão Light",
+     "Goma de tapioca, Peito de frango cozido e desfiado, Requeijão light, Sal, Pimenta-do-reino",
+     """1. Passe a goma de tapioca por uma peneira fina e coloque-a em uma frigideira aquecida.
+        2. Quando a massa estiver firme, adicione o peito de frango desfiado, já temperado com sal e pimenta a gosto.
+        3. Acrescente uma camada de requeijão light por cima do frango.
+        4. Dobre a tapioca ao meio, pressionando levemente para selar.
+        5. Deixe aquecer por mais 1 minuto de cada lado e sirva quente.""",
+     "Opção leve e rica em proteínas, perfeita para o café da manhã ou lanche."),
+
+    ("Biscoito Crocante de Aveia e Cacau",
+     "Aveia em flocos finos, Cacau em pó 100%, Adoçante culinário, Ovo, Essência de baunilha, Fermento em pó",
+     """1. Em uma tigela, misture a aveia, o cacau em pó e o adoçante.
+        2. Adicione o ovo e a essência de baunilha, mexendo até formar uma massa.
+        3. Acrescente uma pitada de fermento para dar leveza.
+        4. Molde pequenos biscoitos sobre uma assadeira forrada com papel manteiga.
+        5. Asse em forno pré-aquecido a 180°C por aproximadamente 15 minutos, ou até dourar levemente.
+        6. Deixe esfriar antes de armazenar em pote hermético.""",
+     "Biscoitos saudáveis, ideais para acompanhar o café ou chá da tarde."),
+
+    ("Salada de Tofu com Legumes e Vinagrete de Limão",
+     "Tofu firme, Tomate, Cenoura, Pepino, Azeite, Suco de limão, Sal, Pimenta, Salsinha",
+     """1. Corte o tofu em cubos médios e tempere com sal e pimenta. Reserve.
+        2. Pique o tomate, a cenoura (ralada) e o pepino em pedaços pequenos.
+        3. Em uma tigela, misture o azeite, o suco de limão e uma pitada de sal para formar o vinagrete.
+        4. Acrescente o tofu e os legumes, mexendo delicadamente para não quebrar o tofu.
+        5. Finalize com salsinha picada e sirva imediatamente.""",
+     "Uma salada proteica, leve e de baixo teor glicêmico para uma refeição refrescante."),
+
+    ("Sopa de Legumes com Frango Desfiado",
+     "Peito de frango cozido, Cenoura, Abobrinha, Chuchu, Cebola, Alho, Caldo de legumes sem sal, Sal, Ervas secas",
+     """1. Cozinhe o peito de frango em água com sal e desfie. Reserve o caldo.
+        2. Em uma panela grande, refogue a cebola e o alho picados até dourarem levemente.
+        3. Adicione a cenoura, a abobrinha e o chuchu em cubos, junto ao caldo de frango reservado (ou caldo de legumes).
+        4. Cozinhe até os legumes ficarem macios. Tempere com sal e ervas secas a gosto.
+        5. Acrescente o frango desfiado e deixe ferver por mais 3 minutos. Sirva quente.""",
+     "Sopa nutritiva, rica em proteínas e fibras, perfeita para jantares leves."),
+
+    ("Lasanha de Berinjela com Ricota e Molho de Tomate",
+     "Berinjela, Ricota, Molho de tomate caseiro, Cebola, Alho, Azeite, Sal, Pimenta-do-reino",
+     """1. Corte a berinjela em fatias finas no sentido do comprimento e deixe de molho em água com sal por 15 minutos.
+        2. Seque as fatias e grelhe em frigideira antiaderente até murcharem levemente.
+        3. Refogue cebola e alho picados e adicione o molho de tomate. Tempere com sal e pimenta.
+        4. Em um refratário, monte camadas de berinjela, ricota amassada e molho de tomate.
+        5. Repita as camadas, finalizando com molho de tomate.
+        6. Asse em forno pré-aquecido a 180°C por 20 minutos ou até borbulhar. Sirva quente.""",
+     "Substitui a massa tradicional por fatias de berinjela, reduzindo carboidratos e mantendo sabor."),
+
+    ("Iogurte Caseiro com Frutas Vermelhas",
+     "Iogurte natural (sem açúcar), Morango, Framboesa, Mirtilo, Chia, Mel ou adoçante (opcional)",
+     """1. Em um recipiente, misture o iogurte natural com mel ou adoçante, se desejar.
+        2. Lave e corte os morangos, framboesas ou mirtilos.
+        3. Em taças ou potes de vidro, disponha camadas de iogurte e frutas.
+        4. Finalize com sementes de chia e leve à geladeira por 10 minutos antes de servir.""",
+     "Uma opção rica em proteínas e antioxidantes, ideal para café da manhã ou lanche da tarde."),
+
+    ("Torta de Espinafre com Tomate e Queijo Branco",
+     "Farinha de aveia, Espinafre, Tomate, Queijo branco, Ovos, Azeite, Sal, Fermento",
+     """1. Lave e pique o espinafre. Refogue rapidamente com azeite e sal, apenas para murchar.
+        2. Corte o tomate em cubos pequenos e o queijo em fatias.
+        3. Em uma tigela, bata os ovos e misture com a farinha de aveia, formando uma massa leve. Adicione o fermento.
+        4. Acrescente o espinafre e o tomate à massa. Ajuste o sal.
+        5. Em uma forma untada, despeje metade da massa. Distribua o queijo branco em fatias e cubra com o restante da massa.
+        6. Asse em forno pré-aquecido a 180°C por 30 minutos, ou até dourar.""",
+     "Uma torta salgada nutritiva, com carboidratos complexos e fibras, ideal para almoço ou jantar."),
+
+    ("Pão de Farelo de Aveia e Linhaça",
+     "Farelo de aveia, Farinha de linhaça, Ovos, Iogurte natural, Fermento em pó, Sal",
+     """1. Em uma tigela, misture o farelo de aveia, a farinha de linhaça e o fermento em pó.
+        2. Bata os ovos com o iogurte e o sal até ficar homogêneo.
+        3. Adicione a mistura seca aos poucos e mexa até formar uma massa consistente.
+        4. Despeje a massa em uma forma de pão untada.
+        5. Asse em forno pré-aquecido a 180°C por 30-35 minutos, até dourar e passar no teste do palito.
+        6. Deixe esfriar para fatiar.""",
+     "Um pão caseiro e saudável, repleto de fibras que auxiliam no controle glicêmico."),
+
+    ("Sopa de Legumes com Carne Moída",
+     "Carne moída magra, Cenoura, Vagem, Chuchu, Alho, Cebola, Caldo de legumes sem sal, Sal, Pimenta",
+     """1. Em uma panela, refogue a carne moída com alho e cebola até dourar. Tempere com sal e pimenta.
+        2. Adicione a cenoura e o chuchu em cubos pequenos, junto com as vagens picadas.
+        3. Cubra com caldo de legumes e cozinhe em fogo médio até os legumes amaciarem.
+        4. Ajuste os temperos se necessário. Sirva quente.""",
+     "Sopa rica em proteínas e fibras, fornecendo saciedade com baixo índice glicêmico."),
+
+    ("Sorvete Caseiro de Banana e Morango",
+     "Banana madura congelada, Morango congelado, Iogurte natural (opcional), Adoçante",
+     """1. Corte as bananas e os morangos em pedaços e congele por pelo menos 4 horas.
+        2. Coloque as frutas congeladas no liquidificador. Se desejar, acrescente iogurte natural para mais cremosidade.
+        3. Bata até obter uma textura de sorvete. Adicione adoçante se necessário.
+        4. Sirva imediatamente ou mantenha no freezer por até 1 hora para firmar.""",
+     "Uma sobremesa natural e refrescante, rica em fibras e sem adição de açúcar refinado."),
+
+   ("Salada de quinoa com grão-de-bico", 
+     "Quinoa, Grão-de-bico, Tomate, Pepino, Salsinha, Azeite, Limão, Sal", 
+     """1. Cozinhe a quinoa conforme as instruções da embalagem.
+        2. Cozinhe o grão-de-bico até que fique macio.
+        3. Pique o tomate e o pepino em cubos pequenos.
+        4. Misture a quinoa, o grão-de-bico, o tomate e o pepino em uma tigela.
+        5. Regue com azeite e suco de limão e adicione a salsinha picada.
+        6. Tempere com sal a gosto e sirva imediatamente.""",
+     "Uma salada rica em fibras e proteínas vegetais, ideal para o controle glicêmico."),
+
+   ("Panqueca de grão-de-bico", 
+     "Grão-de-bico, Farinha de aveia, Ovos, Leite de amêndoas, Azeite, Sal", 
+     """1. Bata o grão-de-bico com os ovos e o leite de amêndoas no liquidificador até obter uma mistura homogênea.
+        2. Adicione a farinha de aveia, uma pitada de sal e misture.
+        3. Aqueça uma frigideira com azeite e coloque pequenas porções da mistura para formar as panquecas.
+        4. Cozinhe dos dois lados até dourar. Sirva com salada ou legumes.""",
+     "Uma panqueca rica em proteínas vegetais, sem glúten e de baixo impacto glicêmico."),
+
+    ("Creme de couve-flor com cebola", 
+     "Couve-flor, Cebola, Alho, Caldo de legumes sem sal, Azeite, Sal, Pimenta", 
+     """1. Cozinhe a couve-flor até que fique bem macia.
+        2. Refogue a cebola e o alho no azeite até dourar.
+        3. Adicione a couve-flor cozida e o caldo de legumes. Cozinhe por mais 5 minutos.
+        4. Bata no liquidificador até obter um creme homogêneo.
+        5. Tempere com sal e pimenta a gosto e sirva quente.""",
+     "Uma sopa cremosa, leve e rica em fibras, ideal para refeições leves."),
+
+     ("Peixe grelhado com molho de limão e alcaparras", 
+     "Peixe (tilápia ou pescada), Limão, Alcaparras, Azeite, Alho, Sal", 
+     """1. Tempere o peixe com sal e suco de limão.
+        2. Grelhe o peixe em uma frigideira antiaderente até dourar.
+        3. Em uma panela, aqueça azeite e refogue o alho. Adicione as alcaparras e o suco de limão.
+        4. Sirva o peixe grelhado com o molho por cima.""",
+     "Uma opção rica em proteínas e ômega-3, ideal para uma refeição saudável."),
+
+     ("Sopa de abóbora com gengibre", 
+     "Abóbora, Gengibre fresco, Alho, Caldo de legumes sem sal, Azeite, Sal, Pimenta", 
+     """1. Cozinhe a abóbora em pedaços até que fique macia.
+        2. Refogue o alho e o gengibre no azeite até dourar.
+        3. Adicione a abóbora cozida e o caldo de legumes.
+        4. Bata tudo no liquidificador até obter um creme liso.
+        5. Tempere com sal e pimenta e sirva quente.""",
+     "Uma sopa nutritiva, ideal para controlar a glicemia."),
+
+      ("Salada de espinafre com morango", 
+     "Espinafre, Morango, Nozes, Queijo de cabra, Azeite, Vinagre balsâmico, Sal", 
+     """1. Lave bem as folhas de espinafre e os morangos, cortando-os em fatias finas.
+        2. Em uma tigela, misture o espinafre, os morangos fatiados, as nozes e o queijo de cabra.
+        3. Regue com azeite e vinagre balsâmico e tempere com sal a gosto.
+        4. Sirva imediatamente como entrada ou acompanhamento.""",
+     "Uma salada refrescante, rica em antioxidantes e gorduras boas."),
+
+      ("Bife grelhado com abobrinha e tomate", 
+     "Bife (maminha ou filé), Abobrinha, Tomate, Alho, Azeite, Sal, Pimenta", 
+     """1. Tempere o bife com sal e pimenta e grelhe até o ponto desejado.
+        2. Corte a abobrinha e o tomate em rodelas.
+        3. Em uma frigideira, aqueça azeite e refogue o alho picado.
+        4. Adicione a abobrinha e o tomate e refogue até ficarem macios.
+        5. Sirva o bife com os legumes ao lado.""",
+     "Uma refeição rica em proteínas e vegetais, ideal para o controle glicêmico."),
+
+     ("Taco de alface com carne moída", 
+     "Carne moída magra, Alface, Tomate, Abacate, Cebola roxa, Pimenta, Limão", 
+     """1. Refogue a carne moída com cebola roxa e pimenta até dourar.
+        2. Lave bem as folhas de alface e seque-as.
+        3. Em cada folha de alface, coloque uma porção de carne moída, tomate picado e fatias de abacate.
+        4. Regue com suco de limão e sirva como lanche saudável.""",
+     "Uma opção leve, rica em proteínas e gorduras saudáveis."),
+
+      ("Chili de frango com abóbora", 
+     "Peito de frango, Abóbora, Feijão vermelho, Alho, Cebola, Pimentão, Tomate, Pimenta", 
+     """1. Cozinhe o peito de frango e desfie.
+        2. Em uma panela grande, refogue o alho, cebola e pimentão no azeite até dourarem.
+        3. Adicione a abóbora em cubos, o feijão vermelho e o tomate picado.
+        4. Cozinhe por 15 minutos e adicione o frango desfiado.
+        5. Tempere com pimenta e sal a gosto. Sirva quente.""",
+     "Um prato quente e nutritivo, com proteínas magras e vegetais ricos em fibras."),
+     
+      ("Panqueca de abóbora", 
+     "Abóbora, Ovos, Farinha de amêndoas, Canela, Adoçante, Sal", 
+     """1. Cozinhe a abóbora até amolecer e faça um purê.
+        2. Bata os ovos com o purê de abóbora e adicione a farinha de amêndoas, canela e adoçante.
+        3. Aqueça uma frigideira antiaderente com um fio de azeite e despeje a mistura para formar as panquecas.
+        4. Cozinhe até dourar de ambos os lados. Sirva quente com frutas frescas.""",
+     "Uma opção saudável e sem glúten, rica em fibras e antioxidantes."),
+
+      ("Bolo de chocolate com abacate", 
+     "Abacate, Cacau em pó, Ovos, Adoçante, Fermento em pó, Baunilha", 
+     """1. Bata o abacate com os ovos, adoçante e baunilha até formar uma mistura homogênea.
+        2. Adicione o cacau em pó e o fermento em pó.
+        3. Despeje a mistura em uma forma untada e asse em forno pré-aquecido a 180°C por 25-30 minutos.
+        4. Deixe esfriar e sirva como sobremesa saudável.""",
+     "Uma sobremesa sem açúcar refinado, rica em gorduras saudáveis e antioxidantes."),
+
+      ("Arroz de brócolis com cogumelos", 
+     "Brócolis, Cogumelos, Arroz integral, Alho, Azeite, Sal, Pimenta", 
+     """1. Cozinhe o arroz integral conforme as instruções da embalagem.
+        2. Lave e pique os brócolis, cortando-os em pedaços pequenos.
+        3. Em uma frigideira, aqueça o azeite e refogue o alho picado até dourar.
+        4. Adicione os cogumelos fatiados e o brócolis, e refogue até ficarem macios.
+        5. Misture o arroz cozido com os vegetais e ajuste o tempero com sal e pimenta a gosto.
+        6. Sirva quente como acompanhamento saudável.""",
+     "Uma refeição rica em fibras e nutrientes, com baixo impacto glicêmico."),
+
+      ("Salmão ao forno com molho de mostarda e mel", 
+     "Salmão, Mostarda Dijon, Mel, Alho, Azeite, Sal, Pimenta", 
+     """1. Preaqueça o forno a 200°C.
+        2. Tempere o salmão com sal, pimenta e um fio de azeite.
+        3. Em uma tigela pequena, misture a mostarda, mel e alho picado.
+        4. Cubra o salmão com o molho de mostarda e mel.
+        5. Leve ao forno e asse por cerca de 15-20 minutos, até o peixe estar completamente cozido.
+        6. Sirva imediatamente, acompanhado de legumes ou salada.""",
+     "Rico em ômega-3, esse prato auxilia na saúde cardiovascular e no controle glicêmico."),
+
+    ("Bolinho de batata doce e atum", 
+     "Batata-doce, Atum, Ovos, Farinha de aveia, Sal, Pimenta", 
+     """1. Cozinhe a batata-doce até ficar macia e faça um purê.
+        2. Misture o purê de batata-doce com o atum, os ovos, a farinha de aveia, sal e pimenta.
+        3. Modele bolinhos e disponha-os em uma assadeira untada.
+        4. Asse em forno pré-aquecido a 200°C por cerca de 20 minutos, até dourar.
+        5. Sirva quente como lanche saudável.""",
+     "Um lanche rico em proteínas e carboidratos de baixo índice glicêmico."),
+
+    ("Salada de pepino com vinagrete de iogurte", 
+     "Pepino, Iogurte natural, Limão, Azeite, Sal, Pimenta, Salsinha", 
+     """1. Lave bem o pepino e corte-o em rodelas finas.
+        2. Em uma tigela pequena, misture o iogurte natural, suco de limão, azeite, sal e pimenta.
+        3. Regue o pepino com o vinagrete e adicione salsinha picada a gosto.
+        4. Misture bem e sirva imediatamente como entrada ou acompanhamento.""",
+     "Uma salada refrescante e rica em probióticos, perfeita para dias quentes."),
+
+    ("Wrap de alface com abacate e frango", 
+     "Folhas de alface, Abacate, Peito de frango, Limão, Sal, Pimenta", 
+     """1. Grelhe o peito de frango até dourar, e depois corte-o em tiras.
+        2. Lave bem as folhas de alface e seque-as.
+        3. Corte o abacate em fatias finas.
+        4. Coloque as tiras de frango, as fatias de abacate e o suco de limão nas folhas de alface.
+        5. Tempere com sal e pimenta a gosto e enrole as folhas de alface formando o wrap.
+        6. Sirva imediatamente como lanche ou refeição leve.""",
+     "Uma opção saudável, com proteínas magras e gorduras boas."),
+
+    ("Cenoura assada com cúrcuma e alho", 
+     "Cenoura, Alho, Cúrcuma em pó, Azeite, Sal, Pimenta", 
+     """1. Preaqueça o forno a 200°C.
+        2. Corte a cenoura em rodelas ou bastões e coloque em uma assadeira.
+        3. Adicione o alho picado, cúrcuma, azeite, sal e pimenta.
+        4. Misture bem para que a cenoura fique bem temperada.
+        5. Asse por 25-30 minutos, mexendo na metade do tempo, até que a cenoura esteja macia e dourada.
+        6. Sirva como acompanhamento ou lanche saudável.""",
+     "A cenoura assada é uma excelente fonte de beta-caroteno, com propriedades anti-inflamatórias."),
+
+   ("Muffin Integral de Banana",
+     "Farinha integral, Banana madura amassada, Ovo, Adoçante (xilitol ou eritritol), Óleo de coco (opcional), Fermento",
+     """1. Misture a banana amassada, o ovo e o adoçante em uma tigela.
+        2. Acrescente a farinha integral e o óleo de coco, mexendo bem.
+        3. Adicione o fermento e incorpore delicadamente.
+        4. Despeje em forminhas e asse em forno pré-aquecido a 180°C por 20 minutos.""",
+     "Um lanche saudável, rico em fibras e sem adição de açúcar refinado, ideal para controlar a glicemia."),
+
+      ("Strogonoff de Frango Low Carb",
+      "Peito de frango em cubos, Cebola, Alho, Champignon, Creme de leite light ou iogurte natural, Extrato de tomate sem açúcar, Sal e pimenta",
+      """1. Refogue a cebola e o alho com um fio de azeite.
+         2. Adicione o frango em cubos e cozinhe até dourar.
+         3. Acrescente o champignon, o extrato de tomate e tempere com sal e pimenta.
+         4. Por último, misture o creme de leite ou iogurte e deixe apurar alguns minutos.""",
+      "Versão reduzida em carboidratos e gorduras, ideal para manter a glicemia controlada."),
+
+      ("Berinjela Recheada com Carne Moída Magra",
+         "Berinjela, Carne moída (patinho ou outra opção magra), Tomate pelado ou molho sem açúcar, Cebola, Alho, Sal e pimenta",
+         """1. Corte a berinjela ao meio e retire parte do miolo, formando “barquinhas”.
+            2. Refogue a carne moída com cebola, alho e temperos. Adicione o molho de tomate.
+            3. Recheie as berinjelas com a carne refogada.
+            4. Leve ao forno a 180°C por cerca de 20 minutos, até a berinjela ficar macia.""",
+         "Prato rico em fibras e proteínas, ótimo para manter a saciedade e o controle da glicemia."),
+
+      ("Pudim de Chia com Frutas Vermelhas",
+         "Sementes de chia, Leite desnatado ou bebida vegetal, Adoçante (xilitol ou eritritol), Frutas vermelhas (morango, framboesa, mirtilo)",
+         """1. Misture a chia com o leite escolhido e o adoçante.
+            2. Deixe hidratar por pelo menos 2 horas na geladeira, mexendo ocasionalmente.
+            3. Bata as frutas vermelhas ou amasse-as para fazer uma calda natural.
+            4. Cubra o pudim de chia com a calda de frutas antes de servir.""",
+         "Sobremesa rica em fibras e antioxidantes, ajudando no controle dos níveis de açúcar no sangue."),
+
+
 
 ]
 

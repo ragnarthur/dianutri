@@ -29,6 +29,16 @@ def create_tables():
         )
     ''')
 
+    # Criação da tabela de daily_foods
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS daily_foods (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            date TEXT NOT NULL UNIQUE,
+            food_id INTEGER NOT NULL,
+            FOREIGN KEY (food_id) REFERENCES foods(id)
+        )
+    ''')
+
     conn.commit()
     conn.close()
 
@@ -194,7 +204,7 @@ def seed_data():
          "Ideal em sopas, saladas, ou misturado em pratos principais.",
          "100g de grão-de-bico contém 164 calorias, 27g de carboidratos, 9g de proteína, 2g de gordura, 8g de fibra."),
 
-        ("Inhame", "Tubérculo", 51,
+         ("Inhame", "Tubérculo", 51,
          "Rico em carboidratos de baixo índice glicêmico, ajuda na digestão.",
          "Auxilia na saúde intestinal e controle da glicemia.",
          "Pode ser consumido cozido, assado ou em purês.",
@@ -337,7 +347,7 @@ def seed_data():
          "Rica em antioxidantes e ajuda na saúde cardiovascular.",
          "Ideal como lanche ou adicionada a sucos e sobremesas.",
          "100g de uva contém 69 calorias, 18g de carboidratos, 0g de proteína, 0g de gordura, 0g de fibra."),
-        
+
         ("Espinafre", "Vegetal", 15, 
         "Rico em ferro, cálcio e antioxidantes. Auxilia no controle de glicemia e na saúde cardiovascular.",
         "Ajuda a reduzir inflamações e melhora a saúde óssea devido ao alto teor de cálcio e vitamina K.",
@@ -382,7 +392,7 @@ def seed_data():
 
         ("Cebolinha", "Vegetal", 15, 
         "Rica em antioxidantes e vitamina K, melhora a saúde óssea e cardiovascular.",
-        "Ajuda na digestão e no controle da glicemia.",
+        "Ajuda na digestão e no controle de glicemia.",
         "Pode ser usada como tempero em saladas, sopas e pratos quentes.",
         "100g de cebolinha contém 32 calorias, 4,3g de carboidratos, 1,8g de proteína, 0,7g de gordura."),
 
@@ -417,7 +427,7 @@ def seed_data():
         "100g de alcachofra contém 47 calorias, 10g de carboidratos, 3g de proteína, 0,1g de gordura."),
 
         ("Quiabo", "Vegetal", 15, 
-        "Rico em fibras e antioxidantes, melhora a digestão e o controle da glicemia.",
+        "Rico em fibras e antioxidantes, melhora a digestão e o controle da glicêmia.",
         "Auxilia na saúde cardiovascular e no controle de colesterol.",
         "Pode ser consumido cozido ou refogado.",
         "100g de quiabo contém 33 calorias, 7g de carboidratos, 1,9g de proteína, 0,2g de gordura."),
@@ -452,7 +462,7 @@ def seed_data():
         "Pode ser consumido cozido ou em refogados.",
         "100g de chuchu contém 19 calorias, 4,5g de carboidratos, 0,8g de proteína, 0,1g de gordura."),
 
-        ("Nabo", "Vegetal", 30, 
+         ("Nabo", "Vegetal", 30, 
         "Rico em fibras, vitaminas C e B6, com baixo impacto glicêmico.",
         "Promove saciedade e melhora a digestão.",
         "Pode ser consumido cru, em saladas, ou cozido.",
@@ -753,7 +763,7 @@ def seed_data():
          "100g de óleo de dendê contém 884 calorias, 0g de carboidratos, 0g de proteína, 100g de gordura."),
 
          ("Escarola", "Vegetal", 10, 
-         "Fonte de fibras e antioxidantes, auxilia na digestão e controle de glicemia.",
+         "Fonte de fibras e antioxidantes, auxilia na digestão e controle de glicêmia.",
          "Ajuda no controle de peso e melhora a saúde intestinal.",
          "Pode ser consumida crua em saladas ou refogada.",
          "100g de escarola contém 18 calorias, 3,6g de carboidratos, 1,8g de proteína, 0,1g de gordura."),
@@ -943,7 +953,7 @@ def seed_data():
          "Ajuda no fortalecimento do sistema imunológico e combate a inflamação.",
          "Pode ser consumida in natura ou em receitas.",
          "100g contém 656 calorias, 12g de carboidratos, 14g de proteína, 66g de gordura."),
-    
+
          ("Noni", "Fruta", 25,
          "Fonte de vitamina C, antioxidantes e minerais como cálcio e potássio.",
          "Ajuda na melhora da digestão, no fortalecimento imunológico e na saúde cardiovascular.",
@@ -1068,13 +1078,8 @@ def seed_data():
      "Vegetal típico de clima quente, com baixíssimo índice glicêmico e rico em vitaminas e minerais.",
      "Promove a saúde digestiva e auxilia no controle da glicemia devido ao alto teor de fibras.",
      "Pode ser consumido cozido, em ensopados ou refogado, combinando com temperos leves.",
-     "100g de maxixe contém aproximadamente 14 calorias, 2.8g de carboidratos, 1g de proteína e 0g de gordura."),
-
-
-]
-
-
-
+     "100g de maxixe contém aproximadamente 14 calorias, 2.8g de carboidratos, 1g de proteína e 0g de gordura.")
+    ]
 
     # Inserindo alimentos no banco
     cursor.executemany('''
@@ -1264,246 +1269,18 @@ def seed_data():
      """1. Amasse a banana até formar um purê.
         2. Misture a banana amassada com a aveia em flocos, a canela e a essência de baunilha.
         3. Adicione coco ralado se desejar.
-        4. Modele pequenos biscoitos e disponha em uma assadeira untada ou forrada com papel manteiga.
-        5. Asse em forno pré-aquecido a 180°C por 15-20 minutos, até dourarem levemente.
-        6. Retire do forno, deixe esfriar e sirva.""",
-     "Biscoitos simples e saudáveis, perfeitos para lanches rápidos."),
+        4. Modele pequenos biscoitos e disponha em uma assadeira forrada com papel manteiga.
+        5. Asse em forno pré-aquecido a 180°C por 15-20 minutos, ou até dourar levemente.
+        6. Deixe esfriar antes de armazenar em pote hermético.""",
+     "Biscoitos saudáveis, ideais para acompanhar o café ou chá da tarde."),
 
      ("Cuscuz de quinoa com legumes",
      "Quinoa, Cenoura, Abobrinha, Tomate, Cebola, Azeite, Limão, Salsinha, Sal",
-     """1. Lave bem a quinoa e cozinhe em água com uma pitada de sal por 12-15 minutos. Escorra e reserve.
-        2. Rale a cenoura, corte a abobrinha em cubos pequenos e o tomate em pedaços.
-        3. Em uma frigideira, aqueça o azeite e refogue a cebola até ficar macia.
-        4. Adicione os legumes, refogue por 5 minutos e misture a quinoa.
-        5. Tempere com limão, sal e salsinha picada. Sirva quente ou frio.""",
+     """1. Lave bem a quinoa e cozinhe em água com sal até que os grãos fiquem macios. Reserve.
+        2. Refogue a cenoura ralada, a abobrinha em cubos e o tomate picado com a cebola.
+        3. Misture a quinoa com os legumes refogados.
+        4. Tempere com azeite, suco de limão, sal e salsinha picada. Sirva quente ou frio.""",
      "Uma refeição nutritiva e leve, com baixo impacto glicêmico."),
-
-    ("Salada de folhas verdes com abacate e nozes",
-     "Alface, Rúcula, Espinafre, Abacate, Nozes, Azeite, Limão, Sal",
-     """1. Lave bem as folhas verdes e seque com cuidado.
-        2. Corte o abacate em fatias finas e pique as nozes.
-        3. Em uma tigela, misture as folhas, o abacate e as nozes.
-        4. Tempere com azeite, suco de limão e sal a gosto. Sirva imediatamente.""",
-     "Rica em fibras e gorduras boas, ideal para uma refeição leve."),
-
-    ("Torta salgada de legumes com farinha de aveia",
-     "Farinha de aveia, Ovos, Abobrinha, Cenoura, Tomate, Azeite, Sal, Fermento",
-     """1. Rale a abobrinha e a cenoura. Corte o tomate em cubos pequenos.
-        2. Em uma tigela, bata os ovos e misture com a farinha de aveia, formando uma massa homogênea.
-        3. Adicione os legumes e tempere com sal.
-        4. Acrescente o fermento e misture delicadamente.
-        5. Despeje a mistura em uma forma untada e asse em forno pré-aquecido a 180°C por 30 minutos.
-        6. Retire do forno, deixe esfriar levemente e sirva.""",
-     "Uma torta prática, rica em fibras e com baixo índice glicêmico."),
-
-    ("Patê de grão-de-bico com ervas",
-     "Grão-de-bico cozido, Alho, Limão, Azeite, Salsinha, Sal, Pimenta",
-     """1. No processador, bata o grão-de-bico com alho, suco de limão e azeite até obter uma pasta.
-        2. Adicione a salsinha picada, sal e pimenta a gosto.
-        3. Misture bem e sirva com torradas integrais ou vegetais crus.""",
-     "Um patê rico em proteínas vegetais e com baixo impacto glicêmico."),
-
-    ("Salada morna de lentilha com espinafre",
-     "Lentilha, Espinafre, Alho, Azeite, Sal, Pimenta, Suco de limão",
-     """1. Cozinhe a lentilha em água com sal até ficar macia, mas firme. Escorra e reserve.
-        2. Aqueça o azeite em uma frigideira e refogue o alho picado.
-        3. Adicione o espinafre e mexa até murchar levemente.
-        4. Misture a lentilha cozida, tempere com sal, pimenta e suco de limão. Sirva morno.""",
-     "Uma refeição leve e rica em fibras e proteínas vegetais."),
-
-    ("Panqueca de espinafre com ricota",
-     "Farinha de aveia, Espinafre, Ricota, Ovo, Leite desnatado, Azeite, Sal",
-     """1. Bata o espinafre, o ovo, o leite e a farinha de aveia no liquidificador até obter uma massa homogênea.
-        2. Aqueça uma frigideira antiaderente com um fio de azeite e despeje uma porção da massa, espalhando bem.
-        3. Cozinhe até dourar dos dois lados e repita com o restante da massa.
-        4. Recheie as panquecas com ricota temperada com sal e azeite.
-        5. Dobre as panquecas e sirva quente.""",
-     "Uma opção leve e nutritiva para refeições principais."),
-
-    ("Bolinho de batata doce e frango",
-     "Batata-doce, Peito de frango, Azeite, Cebola, Alho, Sal, Pimenta",
-     """1. Cozinhe a batata-doce até ficar macia e amasse formando um purê.
-        2. Cozinhe o peito de frango, desfie e tempere com cebola, alho, sal e pimenta.
-        3. Misture o purê de batata-doce com o frango desfiado até formar uma massa.
-        4. Modele bolinhos e asse em forno pré-aquecido a 200°C por 20 minutos ou até dourar.
-        5. Sirva com uma salada fresca.""",
-     "Uma opção rica em proteínas e com carboidratos de baixo índice glicêmico."),
-
-    ("Creme de abacate com cacau",
-     "Abacate, Cacau em pó, Adoçante, Essência de baunilha",
-     """1. Corte o abacate ao meio, retire o caroço e retire a polpa com uma colher.
-        2. No liquidificador, bata o abacate com cacau em pó, adoçante e essência de baunilha até obter um creme homogêneo.
-        3. Transfira para tigelas individuais e leve à geladeira por 30 minutos antes de servir.""",
-     "Uma sobremesa saudável, rica em gorduras boas e sem açúcar refinado."),
-
-    ("Abobrinha recheada com carne moída",
-     "Abobrinha, Carne moída magra, Tomate, Cebola, Alho, Azeite, Sal, Pimenta",
-     """1. Corte a abobrinha ao meio no sentido do comprimento e retire parte da polpa, formando barquinhas.
-        2. Refogue a carne moída com alho, cebola, tomate picado, sal e pimenta.
-        3. Recheie as abobrinhas com a carne moída e disponha em uma assadeira.
-        4. Regue com azeite e leve ao forno pré-aquecido a 180°C por 20 minutos.
-        5. Sirva quente com uma salada verde.""",
-     "Uma refeição completa, rica em proteínas e com baixo impacto glicêmico."),
-
-    ("Iogurte com frutas vermelhas e chia",
-     "Iogurte natural sem açúcar, Morango, Mirtilo, Chia, Adoçante",
-     """1. Lave e corte os morangos em pedaços pequenos.
-        2. Em um recipiente, misture o iogurte natural com os morangos, mirtilos e sementes de chia.
-        3. Adicione adoçante a gosto, misture bem e deixe descansar por 10 minutos para a chia hidratar.
-        4. Sirva como café da manhã ou lanche.""",
-     "Rico em fibras, antioxidantes e proteínas, perfeito para o dia a dia."),
-
-     ("Salada de rúcula com abacate e sementes de girassol",
-     "Rúcula, Abacate, Sementes de girassol, Limão, Azeite, Sal, Pimenta",
-     """1. Lave e seque as folhas de rúcula.
-        2. Corte o abacate em fatias ou cubos pequenos.
-        3. Em uma tigela, misture a rúcula, o abacate e as sementes de girassol.
-        4. Tempere com suco de limão, azeite, sal e pimenta a gosto. Sirva imediatamente.""",
-     "Uma salada leve, rica em gorduras boas e fibras."),
-
-    ("Sopa de couve-flor com alho-poró",
-     "Couve-flor, Alho-poró, Caldo de legumes sem sal, Azeite, Sal, Pimenta",
-     """1. Lave e corte a couve-flor em pedaços pequenos.
-        2. Fatie o alho-poró e refogue em azeite até dourar levemente.
-        3. Adicione a couve-flor e o caldo de legumes, cozinhando até amaciar.
-        4. Bata no liquidificador até obter um creme homogêneo.
-        5. Tempere com sal e pimenta a gosto. Sirva quente.""",
-     "Uma sopa nutritiva e cremosa, perfeita para jantares leves."),
-
-    ("Panqueca de espinafre com cogumelos",
-     "Farinha de aveia, Espinafre, Cogumelos, Ovos, Leite desnatado, Azeite, Sal, Pimenta",
-     """1. Bata o espinafre, os ovos, o leite e a farinha de aveia no liquidificador.
-        2. Aqueça uma frigideira e prepare as panquecas.
-        3. Refogue os cogumelos fatiados com azeite, sal e pimenta.
-        4. Recheie as panquecas com os cogumelos e sirva.""",
-     "Rico em fibras e proteínas, ideal para refeições rápidas."),
-
-    ("Arroz integral com grão-de-bico e legumes",
-     "Arroz integral, Grão-de-bico, Cenoura, Brócolis, Alho, Azeite, Sal",
-     """1. Cozinhe o arroz integral conforme as instruções da embalagem.
-        2. Cozinhe o grão-de-bico e os legumes no vapor.
-        3. Refogue o alho no azeite, misture o arroz, o grão-de-bico e os legumes.
-        4. Tempere com sal a gosto e sirva quente.""",
-     "Um prato completo, rico em fibras e proteínas vegetais."),
-
-    ("Smoothie de abacate e espinafre",
-     "Abacate, Espinafre, Leite de amêndoas, Limão, Gengibre, Adoçante",
-     """1. Coloque todos os ingredientes no liquidificador e bata até obter uma consistência cremosa.
-        2. Ajuste o adoçante a gosto e sirva gelado.""",
-     "Uma bebida nutritiva e rica em gorduras saudáveis."),
-
-    ("Frango ao curry com leite de coco",
-     "Peito de frango, Leite de coco, Curry, Cebola, Alho, Azeite, Sal",
-     """1. Corte o frango em cubos e tempere com sal e curry.
-        2. Refogue a cebola e o alho no azeite.
-        3. Adicione o frango e cozinhe até dourar.
-        4. Acrescente o leite de coco e cozinhe por mais 10 minutos.
-        5. Sirva com legumes no vapor.""",
-     "Um prato aromático e rico em proteínas, com baixo índice glicêmico."),
-
-    ("Pão de aveia e linhaça",
-     "Farinha de aveia, Linhaça, Ovos, Iogurte natural, Fermento, Sal",
-     """1. Misture todos os ingredientes em uma tigela até formar uma massa homogênea.
-        2. Despeje em uma forma e asse em forno pré-aquecido a 180°C por 30 minutos.
-        3. Deixe esfriar antes de servir.""",
-     "Uma alternativa saudável ao pão tradicional, rico em fibras."),
-
-    ("Salada de quinoa com abóbora assada",
-     "Quinoa, Abóbora, Azeite, Salsinha, Sal, Pimenta",
-     """1. Cozinhe a quinoa conforme as instruções da embalagem.
-        2. Asse a abóbora com azeite, sal e pimenta até dourar.
-        3. Misture a quinoa, a abóbora e a salsinha. Sirva morno ou frio.""",
-     "Uma salada equilibrada, rica em fibras e nutrientes."),
-
-    ("Macarrão de abobrinha ao pesto",
-     "Abobrinha, Manjericão, Azeite, Nozes, Alho, Sal",
-     """1. Corte a abobrinha em formato de macarrão usando um espiralizador.
-        2. Prepare o molho pesto batendo o manjericão, as nozes, o alho e o azeite no processador.
-        3. Misture o molho com a abobrinha e sirva.""",
-     "Uma alternativa de baixa caloria e rica em gorduras boas ao macarrão tradicional."),
-
-    ("Bolo de maçã com farinha de coco",
-     "Maçã, Farinha de coco, Ovos, Canela, Adoçante, Fermento",
-     """1. Bata os ovos com o adoçante e a canela.
-        2. Adicione a farinha de coco e misture bem.
-        3. Acrescente o fermento e as maçãs em pedaços.
-        4. Asse em forno pré-aquecido a 180°C por 30 minutos.""",
-     "Uma sobremesa saudável e sem glúten, com baixo índice glicêmico."),
-
-    ("Crepioca recheada com frango e espinafre",
-     "Farinha de tapioca, Ovo, Frango desfiado, Espinafre, Azeite, Sal",
-     """1. Misture a tapioca com o ovo até formar uma massa homogênea.
-        2. Cozinhe a massa em uma frigideira para formar a crepioca.
-        3. Recheie com frango desfiado e espinafre refogado.""",
-     "Uma refeição leve e prática, rica em proteínas."),
-
-    ("Mousse de chocolate com abacate",
-     "Abacate, Cacau em pó, Adoçante, Essência de baunilha",
-     """1. Bata todos os ingredientes no liquidificador até obter uma mistura cremosa.
-        2. Leve à geladeira por 2 horas antes de servir.""",
-     "Uma sobremesa rica em gorduras boas e antioxidantes."),
-
-    ("Tartar de atum com abacate",
-     "Atum fresco, Abacate, Limão, Azeite, Sal, Pimenta",
-     """1. Corte o atum e o abacate em cubos pequenos.
-        2. Tempere com limão, azeite, sal e pimenta.
-        3. Misture delicadamente e sirva.""",
-     "Uma entrada sofisticada e saudável, rica em ômega-3."),
-
-    ("Salada de pepino com iogurte e hortelã",
-     "Pepino, Iogurte natural, Hortelã, Azeite, Sal",
-     """1. Corte o pepino em rodelas finas.
-        2. Misture com o iogurte, hortelã picada, azeite e sal.
-        3. Sirva gelado.""",
-     "Uma salada refrescante e leve, perfeita para dias quentes."),
-
-    ("Hambúrguer de lentilha",
-     "Lentilha, Cebola, Alho, Azeite, Sal, Farinha de aveia",
-     """1. Cozinhe a lentilha até ficar macia.
-        2. Bata no processador com os temperos e a farinha de aveia.
-        3. Modele os hambúrgueres e asse ou grelhe.""",
-     "Uma alternativa vegetariana rica em proteínas e fibras."),
-
-    ("Salmão grelhado com molho de maracujá",
-     "Salmão, Maracujá, Adoçante, Azeite, Sal",
-     """1. Tempere o salmão com sal e grelhe até dourar.
-        2. Prepare o molho reduzindo o suco de maracujá com adoçante.
-        3. Sirva o salmão com o molho por cima.""",
-     "Rico em ômega-3, ideal para a saúde cardiovascular."),
-
-    ("Wrap de alface com frango desfiado",
-     "Folhas de alface, Frango desfiado, Cenoura ralada, Azeite, Limão, Sal",
-     """1. Recheie as folhas de alface com o frango e a cenoura.
-        2. Tempere com azeite, limão e sal antes de enrolar.""",
-     "Um lanche prático, leve e nutritivo."),
-
-    ("Biscoito salgado de grão-de-bico",
-     "Grão-de-bico, Azeite, Sal, Ervas",
-     """1. Bata o grão-de-bico no processador até formar uma massa.
-        2. Misture azeite, sal e ervas.
-        3. Modele os biscoitos e asse.""",
-     "Um snack saudável e rico em proteínas vegetais."),
-
-    ("Purê de couve-flor",
-     "Couve-flor, Azeite, Alho, Sal",
-     """1. Cozinhe a couve-flor até ficar macia.
-        2. Bata no processador com azeite, alho e sal.""",
-     "Um acompanhamento leve e com baixo índice glicêmico."),
-
-    ("Risoto de quinoa com cogumelos",
-     "Quinoa, Cogumelos, Alho, Caldo de legumes, Azeite, Sal",
-     """1. Cozinhe a quinoa no caldo de legumes.
-        2. Refogue os cogumelos no azeite com alho.
-        3. Misture a quinoa com os cogumelos e sirva.""",
-     "Um prato sofisticado, rico em proteínas e fibras."),
-
-     ("Cuscuz de quinoa com frango desfiado",
-     "Quinoa, Frango desfiado, Cenoura ralada, Tomate-cereja, Azeite, Sal, Salsinha",
-     """1. Cozinhe a quinoa em água com sal até que os grãos fiquem macios. Reserve.
-        2. Refogue o frango desfiado com um fio de azeite e tempere com sal.
-        3. Misture a quinoa, o frango, a cenoura ralada e os tomates-cereja cortados ao meio.
-        4. Finalize com azeite e salsinha picada. Sirva morno ou frio.""",
-     "Uma refeição leve e nutritiva, com proteínas magras e carboidratos complexos."),
 
     ("Omelete de claras com espinafre e cogumelos",
      "Claras de ovo, Espinafre, Cogumelos fatiados, Azeite, Sal, Pimenta",
@@ -1549,163 +1326,89 @@ def seed_data():
         6. Sirva quente.""",
      "Uma torta leve, rica em fibras e proteínas, com baixo índice glicêmico."),
 
-    ("Espetinhos de frango com vegetais",
-     "Peito de frango, Pimentão, Cebola, Abobrinha, Azeite, Sal, Páprica, Pimenta",
-     """1. Corte o frango e os vegetais em cubos médios.
-        2. Tempere com azeite, sal, páprica e pimenta.
-        3. Monte os espetinhos alternando o frango e os vegetais.
-        4. Grelhe em fogo médio até dourar e cozinhar o frango por completo.
-        5. Sirva acompanhado de salada.""",
-     "Prático e saudável, rico em proteínas e fibras."),
+    ("Iogurte com frutas vermelhas e chia",
+     "Iogurte natural sem açúcar, Morango, Mirtilo, Chia, Adoçante",
+     """1. Lave e corte os morangos em pedaços pequenos.
+        2. Em um recipiente, misture o iogurte natural com os morangos, mirtilos e sementes de chia.
+        3. Adicione adoçante a gosto, misture bem e deixe descansar por 10 minutos para a chia hidratar.
+        4. Sirva como café da manhã ou lanche.""",
+     "Rico em fibras, antioxidantes e proteínas, perfeito para o dia a dia."),
 
-    ("Tabule de couve-flor",
-     "Couve-flor, Tomate, Pepino, Salsinha, Hortelã, Limão, Azeite, Sal",
-     """1. Triture a couve-flor no processador até obter textura de arroz.
-        2. Misture com tomate picado, pepino, salsinha e hortelã.
-        3. Tempere com azeite, suco de limão e sal.
-        4. Sirva frio como entrada ou acompanhamento.""",
-     "Leve e refrescante, com baixo índice glicêmico."),
+     ("Salada de rúcula com abacate e sementes de girassol",
+     "Rúcula, Abacate, Sementes de girassol, Limão, Azeite, Sal, Pimenta",
+     """1. Lave e seque as folhas de rúcula.
+        2. Corte o abacate em fatias ou cubos pequenos.
+        3. Em uma tigela, misture a rúcula, o abacate e as sementes de girassol.
+        4. Tempere com suco de limão, azeite, sal e pimenta a gosto. Sirva imediatamente.""",
+     "Uma salada leve, rica em gorduras boas e fibras."),
 
-    ("Gratinado de abóbora com cottage",
-     "Abóbora, Queijo cottage, Alho, Azeite, Sal, Pimenta, Ervas frescas",
-     """1. Cozinhe a abóbora até amolecer e amasse formando um purê.
-        2. Tempere com sal, pimenta e ervas frescas.
-        3. Em um refratário, coloque o purê e cubra com queijo cottage.
-        4. Asse em forno pré-aquecido a 180°C por 20 minutos.
-        5. Sirva quente.""",
-     "Rico em fibras e proteínas, ideal como acompanhamento."),
+    ("Torta salgada de legumes com farinha de aveia",
+     "Farinha de aveia, Ovos, Abobrinha, Cenoura, Tomate, Azeite, Sal, Fermento",
+     """1. Rale a abobrinha e a cenoura. Corte o tomate em cubos pequenos.
+        2. Em uma tigela, bata os ovos e misture com a farinha de aveia, formando uma massa homogênea.
+        3. Adicione os legumes e tempere com sal.
+        4. Acrescente o fermento e misture delicadamente.
+        5. Despeje a mistura em uma forma untada e asse em forno pré-aquecido a 180°C por 30 minutos.
+        6. Retire do forno, deixe esfriar levemente e sirva.""",
+     "Uma torta prática, rica em fibras e com baixo índice glicêmico."),
 
-    ("Salada de grãos com rúcula",
-     "Grãos de trigo, Rúcula, Tomate seco, Queijo parmesão ralado, Limão, Azeite, Sal",
-     """1. Cozinhe os grãos de trigo até ficarem macios.
-        2. Misture com rúcula, tomate seco e queijo parmesão ralado.
-        3. Tempere com azeite, suco de limão e sal.
-        4. Sirva como prato principal ou acompanhamento.""",
-     "Uma salada rica em fibras e nutrientes."),
+    ("Patê de grão-de-bico com ervas",
+     "Grão-de-bico cozido, Alho, Limão, Azeite, Salsinha, Sal, Pimenta",
+     """1. No processador, bata o grão-de-bico com alho, suco de limão e azeite até obter uma pasta.
+        2. Adicione a salsinha picada, sal e pimenta a gosto.
+        3. Misture bem e sirva com torradas integrais ou vegetais crus.""",
+     "Um patê rico em proteínas vegetais e com baixo impacto glicêmico."),
 
-    ("Omelete com legumes assados",
-     "Ovos, Abobrinha, Cenoura, Pimentão, Azeite, Sal, Pimenta",
-     """1. Corte os legumes em tiras e asse com azeite, sal e pimenta por 20 minutos.
-        2. Bata os ovos e misture com os legumes assados.
-        3. Cozinhe em uma frigideira até firmar dos dois lados.
-        4. Sirva quente.""",
-     "Opção prática e rica em proteínas e vitaminas."),
+    ("Salada morna de lentilha com espinafre",
+     "Lentilha, Espinafre, Alho, Azeite, Sal, Pimenta, Suco de limão",
+     """1. Cozinhe a lentilha em água com sal até ficar macia, mas firme. Escorra e reserve.
+        2. Aqueça o azeite em uma frigideira e refogue o alho picado.
+        3. Adicione o espinafre e mexa até murchar levemente.
+        4. Misture a lentilha cozida, tempere com sal, pimenta e suco de limão. Sirva morno.""",
+     "Uma refeição leve e rica em fibras e proteínas vegetais."),
 
-    ("Ceviche de tilápia",
-     "Tilápia, Limão, Cebola roxa, Coentro, Azeite, Sal, Pimenta",
-     """1. Corte o peixe em cubos pequenos e tempere com suco de limão, sal e pimenta.
-        2. Adicione cebola roxa em fatias finas e coentro picado.
-        3. Deixe marinar na geladeira por 30 minutos antes de servir.""",
-     "Leve e refrescante, rico em proteínas e antioxidantes."),
+    ("Panqueca de espinafre com ricota",
+     "Farinha de aveia, Espinafre, Ricota, Ovo, Leite desnatado, Azeite, Sal",
+     """1. Bata o espinafre, o ovo, o leite e a farinha de aveia no liquidificador até obter uma massa homogênea.
+        2. Aqueça uma frigideira antiaderente com um fio de azeite e despeje uma porção da massa, espalhando bem.
+        3. Cozinhe até dourar dos dois lados e repita com o restante da massa.
+        4. Recheie as panquecas com ricota temperada com sal e azeite.
+        5. Dobre as panquecas e sirva quente.""",
+     "Uma opção leve e nutritiva para refeições principais."),
 
-    ("Bolinho de abóbora com carne moída",
-     "Abóbora, Carne moída magra, Farinha de aveia, Sal, Pimenta, Azeite",
-     """1. Cozinhe a abóbora até amolecer e amasse formando um purê.
-        2. Misture com carne moída refogada e farinha de aveia.
-        3. Modele os bolinhos e asse em forno pré-aquecido a 200°C por 20 minutos.
-        4. Sirva com salada verde.""",
-     "Uma refeição leve, rica em proteínas e com baixo índice glicêmico."),
+    ("Bolinho de batata doce e frango",
+     "Batata-doce, Peito de frango, Azeite, Cebola, Alho, Sal, Pimenta",
+     """1. Cozinhe a batata-doce até ficar macia e amasse formando um purê.
+        2. Misture o purê com o frango desfiado, temperado com cebola e alho.
+        3. Modele bolinhos e asse em forno pré-aquecido a 200°C por 20 minutos ou até dourar.
+        4. Sirva com uma salada fresca.""",
+     "Uma opção rica em proteínas e com carboidratos de baixo índice glicêmico."),
 
-    ("Creme de brócolis e espinafre",
-     "Brócolis, Espinafre, Caldo de legumes sem sal, Azeite, Alho, Sal, Pimenta",
-     """1. Cozinhe o brócolis e o espinafre no caldo de legumes até amolecerem.
-        2. Bata tudo no liquidificador até formar um creme.
-        3. Refogue alho no azeite, adicione o creme e aqueça.
-        4. Tempere com sal e pimenta. Sirva quente.""",
-     "Uma sopa cremosa e nutritiva, ideal para o jantar."),
+    ("Creme de abacate com cacau",
+     "Abacate, Cacau em pó, Adoçante, Essência de baunilha",
+     """1. Corte o abacate ao meio, retire o caroço e a polpa com uma colher.
+        2. No liquidificador, bata o abacate com cacau em pó, adoçante e essência de baunilha até obter um creme homogêneo.
+        3. Transfira para tigelas individuais e leve à geladeira por 30 minutos antes de servir.""",
+     "Uma sobremesa saudável, rica em gorduras boas e sem açúcar refinado."),
 
-      ("Tapioca de Frango com Requeijão Light",
-     "Goma de tapioca, Peito de frango cozido e desfiado, Requeijão light, Sal, Pimenta-do-reino",
-     """1. Passe a goma de tapioca por uma peneira fina e coloque-a em uma frigideira aquecida.
-        2. Quando a massa estiver firme, adicione o peito de frango desfiado, já temperado com sal e pimenta a gosto.
-        3. Acrescente uma camada de requeijão light por cima do frango.
-        4. Dobre a tapioca ao meio, pressionando levemente para selar.
-        5. Deixe aquecer por mais 1 minuto de cada lado e sirva quente.""",
-     "Opção leve e rica em proteínas, perfeita para o café da manhã ou lanche."),
+    ("Abobrinha recheada com carne moída",
+     "Abobrinha, Carne moída magra, Tomate, Cebola, Alho, Azeite, Sal, Pimenta",
+     """1. Corte a abobrinha ao meio no sentido do comprimento e retire parte da polpa, formando “barquinhas”.
+        2. Refogue a carne moída com alho, cebola e temperos. Adicione o molho de tomate.
+        3. Recheie as abobrinhas com a carne refogada.
+        4. Leve ao forno a 180°C por cerca de 20 minutos, até a berinjela ficar macia.
+        5. Sirva quente com uma salada verde.""",
+     "Uma refeição completa, rica em fibras e proteínas, ótimo para manter a saciedade e o controle da glicemia."),
 
-    ("Biscoito Crocante de Aveia e Cacau",
-     "Aveia em flocos finos, Cacau em pó 100%, Adoçante culinário, Ovo, Essência de baunilha, Fermento em pó",
-     """1. Em uma tigela, misture a aveia, o cacau em pó e o adoçante.
-        2. Adicione o ovo e a essência de baunilha, mexendo até formar uma massa.
-        3. Acrescente uma pitada de fermento para dar leveza.
-        4. Molde pequenos biscoitos sobre uma assadeira forrada com papel manteiga.
-        5. Asse em forno pré-aquecido a 180°C por aproximadamente 15 minutos, ou até dourar levemente.
-        6. Deixe esfriar antes de armazenar em pote hermético.""",
-     "Biscoitos saudáveis, ideais para acompanhar o café ou chá da tarde."),
+    ("Iogurte com frutas vermelhas e chia",
+     "Iogurte natural sem açúcar, Morango, Mirtilo, Chia, Adoçante",
+     """1. Lave e corte os morangos em pedaços pequenos.
+        2. Em um recipiente, misture o iogurte natural com os morangos, mirtilos e sementes de chia.
+        3. Adicione adoçante a gosto, misture bem e deixe descansar por 10 minutos para a chia hidratar.
+        4. Sirva como café da manhã ou lanche.""",
+     "Rico em fibras, antioxidantes e proteínas, perfeito para o dia a dia."),
 
-    ("Salada de Tofu com Legumes e Vinagrete de Limão",
-     "Tofu firme, Tomate, Cenoura, Pepino, Azeite, Suco de limão, Sal, Pimenta, Salsinha",
-     """1. Corte o tofu em cubos médios e tempere com sal e pimenta. Reserve.
-        2. Pique o tomate, a cenoura (ralada) e o pepino em pedaços pequenos.
-        3. Em uma tigela, misture o azeite, o suco de limão e uma pitada de sal para formar o vinagrete.
-        4. Acrescente o tofu e os legumes, mexendo delicadamente para não quebrar o tofu.
-        5. Finalize com salsinha picada e sirva imediatamente.""",
-     "Uma salada proteica, leve e de baixo teor glicêmico para uma refeição refrescante."),
-
-    ("Sopa de Legumes com Frango Desfiado",
-     "Peito de frango cozido, Cenoura, Abobrinha, Chuchu, Cebola, Alho, Caldo de legumes sem sal, Sal, Ervas secas",
-     """1. Cozinhe o peito de frango em água com sal e desfie. Reserve o caldo.
-        2. Em uma panela grande, refogue a cebola e o alho picados até dourarem levemente.
-        3. Adicione a cenoura, a abobrinha e o chuchu em cubos, junto ao caldo de frango reservado (ou caldo de legumes).
-        4. Cozinhe até os legumes ficarem macios. Tempere com sal e ervas secas a gosto.
-        5. Acrescente o frango desfiado e deixe ferver por mais 3 minutos. Sirva quente.""",
-     "Sopa nutritiva, rica em proteínas e fibras, perfeita para jantares leves."),
-
-    ("Lasanha de Berinjela com Ricota e Molho de Tomate",
-     "Berinjela, Ricota, Molho de tomate caseiro, Cebola, Alho, Azeite, Sal, Pimenta-do-reino",
-     """1. Corte a berinjela em fatias finas no sentido do comprimento e deixe de molho em água com sal por 15 minutos.
-        2. Seque as fatias e grelhe em frigideira antiaderente até murcharem levemente.
-        3. Refogue cebola e alho picados e adicione o molho de tomate. Tempere com sal e pimenta.
-        4. Em um refratário, monte camadas de berinjela, ricota amassada e molho de tomate.
-        5. Repita as camadas, finalizando com molho de tomate.
-        6. Asse em forno pré-aquecido a 180°C por 20 minutos ou até borbulhar. Sirva quente.""",
-     "Substitui a massa tradicional por fatias de berinjela, reduzindo carboidratos e mantendo sabor."),
-
-    ("Iogurte Caseiro com Frutas Vermelhas",
-     "Iogurte natural (sem açúcar), Morango, Framboesa, Mirtilo, Chia, Mel ou adoçante (opcional)",
-     """1. Em um recipiente, misture o iogurte natural com mel ou adoçante, se desejar.
-        2. Lave e corte os morangos, framboesas ou mirtilos.
-        3. Em taças ou potes de vidro, disponha camadas de iogurte e frutas.
-        4. Finalize com sementes de chia e leve à geladeira por 10 minutos antes de servir.""",
-     "Uma opção rica em proteínas e antioxidantes, ideal para café da manhã ou lanche da tarde."),
-
-    ("Torta de Espinafre com Tomate e Queijo Branco",
-     "Farinha de aveia, Espinafre, Tomate, Queijo branco, Ovos, Azeite, Sal, Fermento",
-     """1. Lave e pique o espinafre. Refogue rapidamente com azeite e sal, apenas para murchar.
-        2. Corte o tomate em cubos pequenos e o queijo em fatias.
-        3. Em uma tigela, bata os ovos e misture com a farinha de aveia, formando uma massa leve. Adicione o fermento.
-        4. Acrescente o espinafre e o tomate à massa. Ajuste o sal.
-        5. Em uma forma untada, despeje metade da massa. Distribua o queijo branco em fatias e cubra com o restante da massa.
-        6. Asse em forno pré-aquecido a 180°C por 30 minutos, ou até dourar.""",
-     "Uma torta salgada nutritiva, com carboidratos complexos e fibras, ideal para almoço ou jantar."),
-
-    ("Pão de Farelo de Aveia e Linhaça",
-     "Farelo de aveia, Farinha de linhaça, Ovos, Iogurte natural, Fermento em pó, Sal",
-     """1. Em uma tigela, misture o farelo de aveia, a farinha de linhaça e o fermento em pó.
-        2. Bata os ovos com o iogurte e o sal até ficar homogêneo.
-        3. Adicione a mistura seca aos poucos e mexa até formar uma massa consistente.
-        4. Despeje a massa em uma forma de pão untada.
-        5. Asse em forno pré-aquecido a 180°C por 30-35 minutos, até dourar e passar no teste do palito.
-        6. Deixe esfriar para fatiar.""",
-     "Um pão caseiro e saudável, repleto de fibras que auxiliam no controle glicêmico."),
-
-    ("Sopa de Legumes com Carne Moída",
-     "Carne moída magra, Cenoura, Vagem, Chuchu, Alho, Cebola, Caldo de legumes sem sal, Sal, Pimenta",
-     """1. Em uma panela, refogue a carne moída com alho e cebola até dourar. Tempere com sal e pimenta.
-        2. Adicione a cenoura e o chuchu em cubos pequenos, junto com as vagens picadas.
-        3. Cubra com caldo de legumes e cozinhe em fogo médio até os legumes amaciarem.
-        4. Ajuste os temperos se necessário. Sirva quente.""",
-     "Sopa rica em proteínas e fibras, fornecendo saciedade com baixo índice glicêmico."),
-
-    ("Sorvete Caseiro de Banana e Morango",
-     "Banana madura congelada, Morango congelado, Iogurte natural (opcional), Adoçante",
-     """1. Corte as bananas e os morangos em pedaços e congele por pelo menos 4 horas.
-        2. Coloque as frutas congeladas no liquidificador. Se desejar, acrescente iogurte natural para mais cremosidade.
-        3. Bata até obter uma textura de sorvete. Adicione adoçante se necessário.
-        4. Sirva imediatamente ou mantenha no freezer por até 1 hora para firmar.""",
-     "Uma sobremesa natural e refrescante, rica em fibras e sem adição de açúcar refinado."),
-
-   ("Salada de quinoa com grão-de-bico", 
+     ("Salada de quinoa com grão-de-bico", 
      "Quinoa, Grão-de-bico, Tomate, Pepino, Salsinha, Azeite, Limão, Sal", 
      """1. Cozinhe a quinoa conforme as instruções da embalagem.
         2. Cozinhe o grão-de-bico até que fique macio.
@@ -1747,7 +1450,7 @@ def seed_data():
         3. Adicione a abóbora cozida e o caldo de legumes.
         4. Bata tudo no liquidificador até obter um creme liso.
         5. Tempere com sal e pimenta e sirva quente.""",
-     "Uma sopa nutritiva, ideal para controlar a glicemia."),
+     "Uma sopa nutritiva, ideal para controlar a glicêmia."),
 
       ("Salada de espinafre com morango", 
      "Espinafre, Morango, Nozes, Queijo de cabra, Azeite, Vinagre balsâmico, Sal", 
@@ -1878,7 +1581,7 @@ def seed_data():
             2. Refogue a carne moída com cebola, alho e temperos. Adicione o molho de tomate.
             3. Recheie as berinjelas com a carne refogada.
             4. Leve ao forno a 180°C por cerca de 20 minutos, até a berinjela ficar macia.""",
-         "Prato rico em fibras e proteínas, ótimo para manter a saciedade e o controle da glicemia."),
+         "Prato rico em fibras e proteínas, ótimo para manter a saciedade e o controle da glicêmia."),
 
       ("Pudim de Chia com Frutas Vermelhas",
          "Sementes de chia, Leite desnatado ou bebida vegetal, Adoçante (xilitol ou eritritol), Frutas vermelhas (morango, framboesa, mirtilo)",
@@ -1888,10 +1591,130 @@ def seed_data():
             4. Cubra o pudim de chia com a calda de frutas antes de servir.""",
          "Sobremesa rica em fibras e antioxidantes, ajudando no controle dos níveis de açúcar no sangue."),
 
+      ("Salada de Abacate e Tomate",
+     "Abacate, Tomate, Alface, Azeite de oliva, Limão, Sal e pimenta",
+     """1. Corte o abacate e o tomate em cubos e a alface em tiras.
+        2. Misture todos os ingredientes em uma tigela.
+        3. Tempere com azeite, suco de limão, sal e pimenta a gosto.
+        4. Sirva imediatamente para manter a frescor dos ingredientes.""",
+     "Salada refrescante e rica em gorduras saudáveis, ideal para controlar o colesterol e glicemia."),
 
+      ("Salada de Atum com Feijão Branco",
+     "Feijão branco cozido, Atum em água, Tomate, Cebola, Alface, Azeite, Limão, Sal e pimenta",
+     """1. Cozinhe o feijão branco e escorra bem.
+        2. Misture com o atum, tomates picados, cebola e alface.
+        3. Tempere com azeite, suco de limão, sal e pimenta a gosto.
+        4. Sirva imediatamente como refeição principal ou acompanhamento.""",
+     "Salada rica em fibras e proteínas, ideal para controlar a glicêmia e aumentar a saciedade."),
 
-]
+      ("Chips de Batata Doce",
+     "Batata doce, Azeite de oliva, Sal e pimenta, Alecrim (opcional)",
+     """1. Corte a batata doce em fatias finas e uniformes.
+        2. Regue com azeite de oliva e tempere com sal, pimenta e alecrim.
+        3. Leve ao forno preaquecido a 180°C por 15-20 minutos, virando as fatias na metade do tempo.
+        4. Sirva como lanche saudável ou acompanhamento.""",
+     "Uma alternativa saudável e crocante, rica em fibras e antioxidantes."),
 
+      ("Peito de Frango Grelhado com Molho de Iogurte",
+         "Peito de frango, Iogurte natural, Alho, Suco de limão, Ervas finas, Azeite, Sal e pimenta",
+         """1. Tempere o peito de frango com sal, pimenta, alho, suco de limão e azeite.
+            2. Grelhe o frango até dourar de ambos os lados.
+            3. Misture o iogurte natural com as ervas finas e sirva como molho para o frango.
+            4. Acompanhe com legumes grelhados ou salada.""",
+         "Refeição rica em proteínas e probióticos, ajudando na digestão e controle glicêmico."),
+
+      ("Bolinhos de Abobrinha e Queijo",
+         "Abobrinha, Ovo, Farinha de aveia, Queijo ralado, Sal e pimenta",
+         """1. Rale a abobrinha e misture com os outros ingredientes.
+            2. Modele em pequenas bolinhas e coloque em uma assadeira untada.
+            3. Asse em forno pré-aquecido a 180°C por 15-20 minutos até dourar.
+            4. Sirva quente, como lanche ou acompanhamento.""",
+         "Lanche rico em fibras, com baixo índice glicêmico, ideal para diabéticos."),
+
+      ("Salada de Couve com Grãos",
+         "Couve, Grão-de-bico cozido, Feijão verde cozido, Tomate, Azeite de oliva, Limão, Sal e pimenta",
+         """1. Corte a couve em tiras finas e misture com os grãos cozidos.
+            2. Adicione o tomate picado e tempere com azeite, limão, sal e pimenta.
+            3. Sirva como prato principal ou acompanhamento de proteínas magras.""",
+         "Uma salada rica em fibras e proteínas vegetais, promovendo saciedade e controle glicêmico."),
+
+      ("Muffin de Maçã e Canela",
+     "Farinha integral, Maçã ralada, Ovo, Adoçante natural, Canela em pó, Fermento, Leite desnatado",
+     """1. Misture todos os ingredientes secos em uma tigela.
+        2. Adicione a maçã ralada, os ovos e o leite.
+        3. Modele a massa em forminhas de muffin e asse a 180°C por 15-20 minutos.
+        4. Sirva quente ou morno.""",
+     "Lanche saudável e saboroso, ideal para o controle de glicêmia devido à alta fibra da maçã."),
+
+      ("Salada de Beterraba e Laranja",
+     "Beterraba cozida, Laranja, Alface, Azeite de oliva, Vinagre balsâmico, Sal e pimenta",
+     """1. Cozinhe a beterraba e corte-a em fatias finas.
+        2. Corte as laranjas em gomos e misture com a alface.
+        3. Tempere com azeite, vinagre, sal e pimenta.
+        4. Sirva imediatamente para manter a crocância da alface.""",
+     "Salada refrescante e antioxidante, com beterraba que ajuda no controle da pressão arterial."),
+
+      ("Muffin de Abobrinha e Queijo",
+     "Abobrinha ralada, Farinha de aveia, Ovos, Queijo ralado, Azeite, Sal e pimenta",
+     """1. Misture todos os ingredientes até formar uma massa homogênea.
+        2. Modele a massa em forminhas de muffin e asse a 180°C por 15-20 minutos.
+        3. Sirva morno, ideal para lanche saudável ou café da manhã.""",
+     "Muffins ricos em fibras e com baixo índice glicêmico, ótima opção para controlar a glicemia."),
+
+      ("Pudim de Chia com Coco",
+     "Sementes de chia, Leite de coco, Adoçante natural, Frutas vermelhas para decorar",
+     """1. Misture as sementes de chia com o leite de coco e o adoçante.
+        2. Deixe descansar por pelo menos 2 horas na geladeira para que as sementes absorvam o líquido.
+        3. Decore com frutas vermelhas e sirva gelado.""",
+     "Sobremesa nutritiva, rica em fibras e com gordura saudável do coco."),
+
+     ("Sopa de Tomate e Manjericão",
+     "Tomate, Manjericão fresco, Alho, Cebola, Caldo de legumes sem sódio, Azeite, Sal e pimenta",
+     """1. Refogue a cebola e o alho no azeite até dourar.
+        2. Adicione os tomates picados e o caldo de legumes, cozinhe até os tomates se desintegrarem.
+        3. Bata a mistura no liquidificador até obter um creme homogêneo.
+        4. Tempere com sal, pimenta e adicione as folhas de manjericão frescas antes de servir.""",
+     "Sopa rica em licopeno, antioxidante que ajuda na prevenção de doenças cardiovasculares."),
+
+      ("Chili Vegetariano",
+     "Feijão vermelho, Tomate, Cebola, Alho, Pimentão, Cominho, Pimenta em pó, Azeite",
+     """1. Refogue a cebola e o alho no azeite até dourar.
+        2. Adicione os pimentões picados e o feijão vermelho cozido.
+        3. Adicione os tomates picados e tempere com cominho, pimenta em pó, sal e pimenta.
+        4. Cozinhe por 10 minutos e sirva com arroz integral ou como prato principal.""",
+     "Prato vegetariano rico em fibras e antioxidantes, excelente para controle glicêmico."),
+
+     ("Sopa de Ervilhas com Cenoura",
+     "Ervilhas, Cenoura, Cebola, Alho, Caldo de legumes sem sódio, Azeite, Sal e pimenta",
+     """1. Cozinhe as ervilhas com o caldo de legumes até ficarem macias.
+        2. Refogue a cebola, o alho e a cenoura picada no azeite.
+        3. Adicione as ervilhas cozidas e bata tudo no liquidificador.
+        4. Tempere com sal e pimenta e sirva quente.""",
+     "Sopa nutritiva, rica em fibras e proteínas vegetais, excelente para controle glicêmico."),
+
+      ("Salmão ao Forno com Alho e Limão",
+      "Salmão, Alho picado, Limão, Azeite de oliva, Ervas finas, Sal e pimenta",
+      """1. Tempere o salmão com alho, suco de limão, azeite, sal, pimenta e ervas finas.
+         2. Coloque o salmão em uma assadeira e leve ao forno preaquecido a 180°C por 20-25 minutos.
+         3. Sirva com legumes assados ou uma salada verde.""",
+      "Prato saudável e leve, rico em ômega-3, ideal para controle da glicemia e saúde cardiovascular."),
+
+      ("Espetinhos de Frango com Abacaxi",
+         "Peito de frango, Abacaxi, Pimentão, Cebola, Azeite, Sal, Pimenta, Ervas finas",
+         """1. Corte o peito de frango e os vegetais em cubos e o abacaxi em rodelas.
+            2. Tempere com azeite, sal, pimenta e ervas finas.
+            3. Espete os pedaços de frango e legumes em palitos para churrasco.
+            4. Grelhe por cerca de 10-15 minutos e sirva com arroz integral ou salada.""",
+         "Espetinhos saudáveis, ricos em proteínas e com sabor tropical, excelente para diabéticos."),
+
+      ("Pão de Abobrinha Low Carb",
+         "Abobrinha ralada, Ovo, Farinha de amêndoas, Fermento, Azeite, Sal, Pimenta",
+         """1. Rale a abobrinha e misture com os ovos, farinha de amêndoas, azeite, sal e pimenta.
+            2. Adicione o fermento e misture bem.
+            3. Coloque a massa em uma forma untada e asse a 180°C por 30 minutos.
+            4. Sirva fatiado, ideal para acompanhar sopas ou como lanche.""",
+         "Pão sem carboidratos refinados, rico em fibras e proteínas, ótimo para diabéticos.")
+    ]
 
     # Inserindo receitas no banco
     cursor.executemany('''

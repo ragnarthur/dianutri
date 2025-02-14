@@ -39,6 +39,18 @@ def create_tables():
         )
     ''')
 
+    # Criação da tabela de daily_recipes
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS daily_recipes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            date TEXT NOT NULL,
+            meal_type TEXT NOT NULL,
+            recipe_id INTEGER NOT NULL,
+            UNIQUE(date, meal_type),
+            FOREIGN KEY (recipe_id) REFERENCES recipes(id)
+        )
+    ''')
+    
     conn.commit()
     conn.close()
 

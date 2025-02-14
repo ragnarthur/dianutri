@@ -1,8 +1,8 @@
 ﻿from flask import Flask, render_template, request, redirect, url_for
 import datetime
 import sqlite3
-from zoneinfo import ZoneInfo
 import locale
+from zoneinfo import ZoneInfo  # Certifique-se de usar Python 3.9+
 
 app = Flask(__name__)
 app.config['DATABASE'] = 'database.db'
@@ -76,7 +76,7 @@ RECIPE_IMAGE_MAP = {
     "Pudim de Chia com Coco": "pudim_chia_coco.jpg",
     "Pudim de Chia com Frutas Vermelhas": "pudim_chia_frutas_vermelhas.jpg",
     "Purê de couve-flor": "pure_couve_flor.jpg",
-    "Pão de aveia e linhaça": "pao_aveia_linhaca.jpg",
+    "Pão de aveia e linhaça": "pao_aveia_linhaca.jpg", 
     "Pão de Farelo de Aveia e Linhaça": "pao_farelo_aveia.jpg",
     "Quibe assado de abóbora": "quibe_assado_abobora.jpg",
     "Risoto de quinoa com cogumelos": "risoto_quinoa_legumes.jpg",
@@ -200,7 +200,7 @@ IMAGE_MAP = {
     "Cogumelo (champignon)": "cogumelo_champignon.jpg",
     "Couve": "couve.jpg",
     "Couve de Bruxelas": "couve_bruxelas.jpg",
-    "Couve kale": "couve_kale.jpg",  
+    "Couve kale": "couve_kale.jpg",
     "Couve-flor": "couve_flor.jpg",
     "Cupuaçu": "cupuacu.jpg",
     "Damascos secos": "damascos_secos.jpg",
@@ -289,7 +289,7 @@ IMAGE_MAP = {
     "Romã": "roma.jpg",
     "Rúcula": "rucula.jpg",
     "Sacha Inchi": "sacha_inchi.jpg",
-    "Salsinha": "salsinha.jpg",
+    "Salsinha": "salsinha.jpg", 
     "Semente de abóbora": "semente_abobora.jpg",
     "Semente de chia": "semente_chia.jpg",
     "Semente de girassol": "semente_girassol.jpg",
@@ -311,54 +311,28 @@ def get_db_connection():
     conn.row_factory = sqlite3.Row
     return conn
 
-# Dicionário de palavras-chave para cada tipo de refeição (todos em minúsculas)
-MEAL_KEYWORDS = {
-    "Café da Manhã": ["panqueca", "muffin", "omelete", "biscoito", "crepioca", "iogurte", "pão"],
-    "Almoço": ["arroz", "salada", "frango", "peixe", "risoto", "cuscuz", "lasanha", "bife", "chili", "bolinho", "hambúrguer", "taco", "quibe"],
-    "Café da Tarde": ["smoothie", "pudim", "mousse", "sanduíche", "wrap"],
-    "Janta": ["sopa", "torta", "strogonoff", "wrap", "tartar", "salada morna", "salmão", "ceviche", "creme", "gratinado", "quinoa"]
-}
-
-# Função auxiliar para obter uma receita aleatória filtrada pelas palavras-chave
-def get_recipe_for_meal(cursor, meal_type):
-    keywords = MEAL_KEYWORDS.get(meal_type, [])
-    if not keywords:
-        return None
-    conditions = " OR ".join(["LOWER(title) LIKE ?" for _ in keywords])
-    query = f"SELECT * FROM recipes WHERE {conditions} ORDER BY RANDOM() LIMIT 1"
-    params = [f"%{kw}%" for kw in keywords]
-    return cursor.execute(query, params).fetchone()
-
-# Função auxiliar para obter a próxima receita (em ordem de id) para o ciclo do tipo de refeição
-def get_next_recipe_for_meal(cursor, meal_type):
-    keywords = MEAL_KEYWORDS.get(meal_type, [])
-    if not keywords:
-        return None
-    conditions = " OR ".join(["LOWER(title) LIKE ?" for _ in keywords])
-    query_all = f"SELECT * FROM recipes WHERE {conditions} ORDER BY id ASC"
-    params = [f"%{kw}%" for kw in keywords]
-    recipes = cursor.execute(query_all, params).fetchall()
-    
-    # Buscar o registro mais recente para este tipo na tabela daily_recipes
-    record = cursor.execute(
-        "SELECT recipe_id FROM daily_recipes WHERE meal_type = ? ORDER BY date DESC LIMIT 1",
-        (meal_type,)
-    ).fetchone()
-    
-    if record:
-        last_recipe_id = record['recipe_id']
-        # Procura a próxima receita cujo id seja maior que a última usada
-        for r in recipes:
-            if r['id'] > last_recipe_id:
-                return r
-        # Se todas já foram utilizadas, reinicia o ciclo
-        if recipes:
-            return recipes[0]
-        return None
-    else:
-        if recipes:
-            return recipes[0]
-        return None
+# Função auxiliar para obter a próxima receita para um tipo de refeição,
+# filtrando pelas palavras-chave definidas para cada refeição.
+def get_next_recipe_for_meal(cursor, meal):
+    meal_keywords = {
+        "Café da Manhã": ["aveia", "muffin", "iogurte", "panqueca", "smoothie"],
+        "Almoço": ["arroz", "frango", "peixe", "salada", "lentilha", "berinjela", "risoto"],
+        "Café da Tarde": ["biscoito", "bolo", "patê", "pudim"],
+        "Janta": ["sopa", "salada", "torta", "frango", "peixe", "quinoa", "risoto"]
+    }
+    keywords = meal_keywords.get(meal, [])
+    if keywords:
+        conditions = []
+        params = []
+        for kw in keywords:
+            conditions.append("lower(title) LIKE ?")
+            params.append(f"%{kw.lower()}%")
+        query = "SELECT * FROM recipes WHERE " + " OR ".join(conditions) + " ORDER BY RANDOM() LIMIT 1"
+        recipe = cursor.execute(query, params).fetchone()
+        if recipe:
+            return recipe
+    # Se não encontrar nenhuma receita que combine, retorna uma receita aleatória
+    return cursor.execute("SELECT * FROM recipes ORDER BY RANDOM() LIMIT 1").fetchone()
 
 @app.route('/')
 def index():
@@ -409,26 +383,22 @@ def recipe_detail(recipe_id):
 
 @app.route('/daily-schedule')
 def daily_schedule():
-    # Define o fuso horário para São Paulo e a localidade para pt_BR
+    # Obter a data e hora atuais considerando o fuso horário de São Paulo
     now = datetime.datetime.now(ZoneInfo("America/Sao_Paulo"))
     today = now.date()
+    # Define a localidade para português do Brasil (verifique se "pt_BR.utf8" está disponível)
     locale.setlocale(locale.LC_TIME, "pt_BR.utf8")
     display_date = now.strftime("%A, %d de %B")
     current_time = now.strftime("%H:%M")
     
-    # Define os tipos de refeição para o período atual
-    if now.hour < 12:
-        meals = ["Café da Manhã", "Almoço"]
-    elif 12 <= now.hour < 18:
-        meals = ["Café da Tarde"]
-    else:
-        meals = ["Janta"]
-    
+    # Lista de todas as refeições do dia
+    meals = ["Café da Manhã", "Almoço", "Café da Tarde", "Janta"]
     schedule = []
+    
     with get_db_connection() as conn:
         cursor = conn.cursor()
         for meal in meals:
-            # Verifica se já existe uma receita para hoje para este tipo de refeição
+            # Verifica se já existe um registro para esta refeição hoje na tabela daily_recipes
             record = cursor.execute(
                 "SELECT recipe_id FROM daily_recipes WHERE date = ? AND meal_type = ?",
                 (today.strftime("%Y-%m-%d"), meal)
@@ -439,7 +409,7 @@ def daily_schedule():
                     (record['recipe_id'],)
                 ).fetchone()
             else:
-                # Obtém a próxima receita no ciclo para o tipo de refeição
+                # Obtém a próxima receita para o tipo de refeição usando a função auxiliar
                 recipe = get_next_recipe_for_meal(cursor, meal)
                 if recipe:
                     cursor.execute(

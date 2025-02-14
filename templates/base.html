@@ -3,35 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <title>{% block title %}DiaNutri{% endblock %}</title>
-
-  <!-- Bulma CSS (CDN) -->
+  <!-- Bulma CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
-  <!-- Font Awesome (Ícones) -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-
-  <!-- CSS customizado (style.css acima) -->
+  <!-- CSS customizado -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
   {% block head %}{% endblock %}
 </head>
 <body>
-
-  <!-- Navbar Bulma -->
+  <!-- Navbar -->
   <nav class="navbar is-fixed-top is-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item has-text-weight-semibold" href="{{ url_for('index') }}">
         <i class="fas fa-apple-alt"></i> DiaNutri
       </a>
-      <!-- Botão hamburger (mobile) -->
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-         data-target="navbarMenu">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
-
     <div id="navbarMenu" class="navbar-menu">
       <div class="navbar-end">
         <a class="navbar-item has-text-weight-semibold" href="{{ url_for('list_foods') }}">Alimentos</a>
@@ -41,7 +33,23 @@
     </div>
   </nav>
 
-  <!-- Script JS p/ navbar mobile (Bulma) -->
+  <!-- Conteúdo principal -->
+  <div class="main-content">
+    <section class="section">
+      <div class="container">
+        {% block content %}{% endblock %}
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="content has-text-centered">
+      <p>Desenvolvido para o aplicativo DiaNutri - Alimentação Saudável</p>
+    </div>
+  </footer>
+
+  <!-- Scripts para navbar mobile e esconder navbar -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const burger = document.querySelector('.navbar-burger');
@@ -53,53 +61,19 @@
         });
       }
     });
-  </script>
-
-  <!-- Script JS para esconder a navbar quando o mouse não estiver perto -->
-  <script>
     document.addEventListener('DOMContentLoaded', () => {
       const navbar = document.querySelector('.navbar');
       let timer;
-
-      // Função para mostrar a navbar
-      function showNavbar() {
-        navbar.classList.remove('hidden');
-      }
-
-      // Função para esconder a navbar
-      function hideNavbar() {
-        navbar.classList.add('hidden');
-      }
-
-      // Detecta o movimento do mouse para mostrar a navbar quando o mouse se aproximar
+      function showNavbar() { navbar.classList.remove('hidden'); }
+      function hideNavbar() { navbar.classList.add('hidden'); }
       document.addEventListener('mousemove', () => {
-        clearTimeout(timer); // Limpa o temporizador anterior
-        showNavbar();  // Mostra a navbar
-
-        // Configura o temporizador para esconder a navbar após 3 segundos de inatividade
+        clearTimeout(timer);
+        showNavbar();
         timer = setTimeout(hideNavbar, 3000);
       });
-
-      // Inicialmente, esconder a navbar
       hideNavbar();
     });
   </script>
-
-  <!-- Conteúdo principal -->
-  <div class="main-content">
-    <section class="section">
-      <div class="container">
-        {% block content %}{% endblock %}
-      </div>
-    </section>
-  </div>
-
-  <!-- Rodapé sticky -->
-  <footer>
-    <div class="content has-text-centered">
-      <p>Desenvolvido para o aplicativo DiaNutri - Alimentação Saudável</p>
-    </div>
-  </footer>
-
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

@@ -6,26 +6,38 @@
   <h2 class="title is-3">Agenda Diária de Alimentação Saudável</h2>
   <p class="is-size-4"><strong>Data:</strong> {{ date }}</p>
   <p class="is-size-4"><strong>Hora:</strong> {{ current_time }}</p>
-  
-  <div class="schedule-container">
-    {% for item in schedule %}
-      <div class="meal-section">
-        <h3 class="meal-title">{{ item.meal }}</h3>
-        {% if item.recipe %}
-          <div class="recipe-card">
-            <h4 class="recipe-title">{{ item.recipe['title'] }}</h4>
-            <img src="{{ url_for('static', filename='images/recipes/' + image_map.get(item.recipe['title'], 'default.jpg')) }}" 
-                 alt="{{ item.recipe['title'] }}" 
-                 class="recipe-image" width="200">
-            <p><strong>Ingredientes:</strong> {{ item.recipe['ingredients'] }}</p>
-            <p><strong>Modo de Preparo:</strong> {{ item.recipe['instructions'] }}</p>
-            <a href="{{ url_for('recipe_detail', recipe_id=item.recipe['id']) }}" class="button is-link">Ver Receita</a>
-          </div>
-        {% else %}
-          <p>Nenhuma receita disponível para esta refeição.</p>
-        {% endif %}
-      </div>
-    {% endfor %}
+
+  <!-- Envolve o carrossel em um wrapper -->
+  <div class="carousel-wrapper">
+    <!-- Botão de Navegação: Anterior -->
+    <button id="prev" class="carousel-btn carousel-btn--prev" aria-label="Anterior">‹</button>
+
+    <!-- Container com as "telas" (cada refeição) -->
+    <div class="schedule-container">
+      {% for item in schedule %}
+        <div class="meal-section">
+          <h3 class="meal-title">{{ item.meal }}</h3>
+          {% if item.recipe %}
+            <div class="recipe-card">
+              <h4 class="recipe-title">{{ item.recipe['title'] }}</h4>
+              <img src="{{ url_for('static', filename='images/recipes/' + image_map.get(item.recipe['title'], 'default.jpg')) }}"
+                   alt="{{ item.recipe['title'] }}"
+                   class="recipe-image">
+              <p><strong>Ingredientes:</strong> {{ item.recipe['ingredients'] }}</p>
+              <p><strong>Modo de Preparo:</strong></p>
+              <p class="instructions">{{ item.recipe['instructions'] }}</p>
+              <a href="{{ url_for('recipe_detail', recipe_id=item.recipe['id']) }}" class="button is-link">Ver Receita</a>
+            </div>
+          {% else %}
+            <p>Nenhuma receita disponível para esta refeição.</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Botão de Navegação: Próximo -->
+    <button id="next" class="carousel-btn carousel-btn--next" aria-label="Próximo">›</button>
   </div>
+
   <a href="{{ url_for('list_recipes') }}" class="button is-link mt-4">Ver Todas as Receitas</a>
 {% endblock %}

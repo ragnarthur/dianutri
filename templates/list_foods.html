@@ -3,64 +3,66 @@
 {% block title %}Lista de Alimentos{% endblock %}
 
 {% block content %}
-<h2 class="title is-4">Lista de Alimentos</h2>
+<div class="list-foods-page">
+  <h2 class="title is-4">Lista de Alimentos</h2>
 
-<!-- Barra de busca -->
-<form method="GET" action="{{ url_for('list_foods') }}" class="field is-grouped mb-4">
-  <p class="control">
-    <input class="input" type="text" name="search"
-           placeholder="Buscar alimento"
-           value="{{ request.args.get('search', '') }}">
-  </p>
-  <p class="control">
-    <button class="button is-info" type="submit">Buscar</button>
-  </p>
-</form>
+  <!-- Barra de busca -->
+  <form method="GET" action="{{ url_for('list_foods') }}" class="field is-grouped mb-4">
+    <p class="control">
+      <input class="input" type="text" name="search"
+             placeholder="Buscar alimento"
+             value="{{ request.args.get('search', '') }}">
+    </p>
+    <p class="control">
+      <button class="button is-info" type="submit">Buscar</button>
+    </p>
+  </form>
 
-<div class="box">
-  {% if foods %}
-    {% for food in foods %}
-      {% set gi_value = food['glycemic_index'] %}
+  <div class="box">
+    {% if foods %}
+      {% for food in foods %}
+        {% set gi_value = food['glycemic_index'] %}
 
-      {# Classificação do IG nas três faixas: #}
-      {% if gi_value <= 40 %}
-        {% set gi_label = "Baixo IG" %}
-        {% set badge_class = "tag is-success" %}
-      {% elif gi_value <= 55 %}
-        {% set gi_label = "Moderado IG" %}
-        {% set badge_class = "tag is-warning" %}
-      {% else %}
-        {% set gi_label = "Alto IG" %}
-        {% set badge_class = "tag is-danger" %}
-      {% endif %}
+        {# Classificação do IG nas três faixas: #}
+        {% if gi_value <= 40 %}
+          {% set gi_label = "Baixo IG" %}
+          {% set badge_class = "tag is-success" %}
+        {% elif gi_value <= 55 %}
+          {% set gi_label = "Moderado IG" %}
+          {% set badge_class = "tag is-warning" %}
+        {% else %}
+          {% set gi_label = "Alto IG" %}
+          {% set badge_class = "tag is-danger" %}
+        {% endif %}
 
-      <div class="food-item" style="margin-bottom: 1rem; border-bottom: 1px solid #ddd; padding-bottom: 0.75rem;">
-        <div class="food-name" style="font-size: 1.2rem; font-weight: 600; display: flex; flex-direction: column; align-items: center;">
-          <!-- Imagem do alimento -->
-          <img src="{{ url_for('static', filename='images/' ~ image_map.get(food['name'], 'default.jpg')) }}" 
-               alt="{{ food['name'] }}" 
-               style="width: 90px; height: 90px; object-fit: cover; margin-bottom: 10px;">
-          
-          <!-- Nome do alimento, clicável -->
-          <a href="{{ url_for('food_detail', food_id=food['id']) }}" class="has-text-link">
-            {{ food['name'] }}
-          </a>
+        <div class="food-item" style="margin-bottom: 1rem; border-bottom: 1px solid #ddd; padding-bottom: 0.75rem;">
+          <div class="food-name" style="font-size: 1.2rem; font-weight: 600; display: flex; flex-direction: column; align-items: center;">
+            <!-- Imagem do alimento -->
+            <img src="{{ url_for('static', filename='images/' ~ image_map.get(food['name'], 'default.jpg')) }}" 
+                 alt="{{ food['name'] }}" 
+                 style="width: 90px; height: 90px; object-fit: cover; margin-bottom: 10px;">
+            
+            <!-- Nome do alimento, clicável -->
+            <a href="{{ url_for('food_detail', food_id=food['id']) }}" class="has-text-link">
+              {{ food['name'] }}
+            </a>
+          </div>
+
+          <!-- Exibição do IG com badge (valor + texto) -->
+          <div class="food-details" style="font-size: 0.95rem; color: #555; text-align: center;">
+            <p>
+              {{ food['category'] }} | 
+              IG: <span class="{{ badge_class }}">{{ gi_value }} - {{ gi_label }}</span>
+            </p>
+            <a href="{{ url_for('food_detail', food_id=food['id']) }}" class="has-text-link is-size-6">
+              Detalhes
+            </a>
+          </div>
         </div>
-
-        <!-- Exibição do IG com badge (valor + texto) -->
-        <div class="food-details" style="font-size: 0.95rem; color: #555; text-align: center;">
-          <p>
-            {{ food['category'] }} | 
-            IG: <span class="{{ badge_class }}">{{ gi_value }} - {{ gi_label }}</span>
-          </p>
-          <a href="{{ url_for('food_detail', food_id=food['id']) }}" class="has-text-link is-size-6">
-            Detalhes
-          </a>
-        </div>
-      </div>
-    {% endfor %}
-  {% else %}
-    <p class="has-text-grey">Nenhum alimento encontrado.</p>
-  {% endif %}
+      {% endfor %}
+    {% else %}
+      <p class="has-text-grey">Nenhum alimento encontrado.</p>
+    {% endif %}
+  </div>
 </div>
 {% endblock %}

@@ -57,11 +57,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* 7) Ajustes para lista de alimentos */
+/* Ajuste de espaçamento para a página de alimentos */
+.list-foods-page {
+  margin-top: 2rem; /* Ajuste o valor conforme necessário */
+}
+
 .box {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-bottom: 1.5rem;
+  padding: 5rem 0 0 0 !important;
 }
 .box .food-item {
   display: flex;
@@ -470,9 +476,9 @@ section.section {
   background-size: cover;
   min-height: 100vh;
   box-sizing: border-box;
-  padding: 0 !important;
+  padding: 0.7rem 0 0 0 !important;
   margin: 0 !important;
-
+  
   /* Texto em branco fora dos cards */
   color: #fff;
 }

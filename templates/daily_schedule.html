@@ -3,6 +3,7 @@
 {% block title %}Agenda Diária de Alimentação Saudável{% endblock %}
 
 {% block content %}
+<div class="daily-schedule-bg">
   <h2 class="title is-3">Agenda Diária de Alimentação Saudável</h2>
   <p class="is-size-4"><strong>Data:</strong> {{ date }}</p>
   <p class="is-size-4"><strong>Hora:</strong> {{ current_time }}</p>
@@ -40,4 +41,5 @@
   </div>
 
   <a href="{{ url_for('list_recipes') }}" class="button is-link mt-4">Ver Todas as Receitas</a>
+</div>
 {% endblock %}

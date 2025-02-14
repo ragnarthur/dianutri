@@ -16,7 +16,8 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: 'Poppins', sans-serif;
-  background-color: #f8f9fa; /* Fundo claro */
+  /* Removido o background-color para não conflitar com a imagem de fundo */
+  /* background-color: #f8f9fa; */
   color: #363636;           /* Cor principal do Bulma */
   font-size: 20px;          /* Aumentar fonte base */
   line-height: 1.8;         /* Maior espaçamento entre linhas */
@@ -32,6 +33,9 @@ body {
 /* 4) .main-content ocupa o espaço, empurrando o footer */
 .main-content {
   flex: 1 0 auto;
+  /* Remova qualquer margem/padding que possa criar espaço extra */
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* 5) Footer fixo ao final */
@@ -220,8 +224,6 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
-
-
 /* ---------------------------------------------------------------------------
    Estilização da página inicial (index)
 --------------------------------------------------------------------------- */
@@ -324,7 +326,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
 /* ---------------------------------------------------------------------------
    Ajustes adicionais para a página de receitas
 --------------------------------------------------------------------------- */
@@ -342,7 +343,6 @@ section.section {
   margin: 0;
 }
 
-
 /* Grid de cards */
 .recipe-grid-container {
   display: grid;
@@ -351,7 +351,6 @@ section.section {
   padding: 2rem; /* Este padding garante espaçamento interno */
 }
 
-/* Estilo dos cartões de receitas */
 .recipe-grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -373,24 +372,23 @@ section.section {
 .recipe-card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.7); /* Reduz a transparência no hover */
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .recipe-card h3 {
   font-size: 1.5rem;
-  color: #0056b3; /* Melhor contraste */
+  color: #0056b3;
   margin-bottom: 1rem;
   transition: color 0.3s ease;
 }
 
 .recipe-card:hover h3 {
-  color: #003f8a; /* Cor mais escura no hover */
+  color: #003f8a;
 }
 
-/* Texto resumo dos cards */
 .recipe-card .recipe-summary {
   font-size: 1rem;
-  color: #212529; /* Preto suave */
+  color: #212529;
   margin-bottom: 1rem;
 }
 
@@ -422,19 +420,19 @@ section.section {
 /* Títulos dos cards */
 .recipe-card h3 {
   font-size: 1.5rem;
-  color: #c5d5eb; /* Azul escuro */
+  color: #c5d5eb;
   margin-bottom: 1rem;
   transition: color 0.3s ease;
 }
 
 .recipe-card:hover h3 {
-  color: #457b9d; /* Azul intermediário no hover */
+  color: #457b9d;
 }
 
 /* Links e botões */
 .recipe-card a {
   text-decoration: none;
-  background-color: #457b9d; /* Azul intermediário */
+  background-color: #457b9d;
   color: white;
   padding: 0.75rem 1.25rem;
   border-radius: 6px;
@@ -443,10 +441,9 @@ section.section {
 }
 
 .recipe-card a:hover {
-  background-color: #1d3557; /* Azul mais escuro */
+  background-color: #1d3557;
 }
 
-/* Botões gerais */
 .button.is-link {
   background-color: #457b9d;
   color: white;
@@ -466,38 +463,70 @@ section.section {
    Estilização específica para a página de Agenda Diária (/daily-schedule) em Carrossel
 --------------------------------------------------------------------------- */
 
-/* ---------------------------------------------------------------------------
-   Carrossel para Agenda Diária
---------------------------------------------------------------------------- */
+/* Background para Agenda Diária */
+.daily-schedule-bg {
+  position: relative; /* Necessário para overlay */
+  background: url("/static/images/background/agenda.jpg") no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 0 !important;
+  margin: 0 !important;
 
-/* Envolve o carrossel em um wrapper para posicionar as setas */
+  /* Texto em branco fora dos cards */
+  color: #fff;
+}
+
+/* Overlay escuro para melhorar contraste do fundo */
+.daily-schedule-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Ajuste a opacidade conforme necessário */
+  z-index: 0;
+}
+
+/* Todo o conteúdo dentro de .daily-schedule-bg fica acima do overlay */
+.daily-schedule-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Sobrescrever padding/margin do Bulma em section e container dentro da rota */
+.daily-schedule-bg .section {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.daily-schedule-bg .container {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+}
+
+/* Carrossel */
 .carousel-wrapper {
   position: relative;
   width: 100%;
-  overflow: hidden; /* Evita scroll manual */
+  overflow: hidden;
 }
 
-/* Container que "desliza" horizontalmente */
 .schedule-container {
   display: flex;
   flex-direction: row;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  overflow-x: hidden; /* Sem rolagem manual */
+  overflow-x: hidden;
   width: 100%;
 }
 
-/* Cada refeição ocupa 100% da largura (uma "tela" por vez) */
+/* Cada refeição ocupa 100% da tela e centraliza o conteúdo */
 .meal-section {
   flex: 0 0 100%;
   scroll-snap-align: start;
-
-  /* Centraliza o conteúdo no eixo horizontal/vertical */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; 
   justify-content: center;
-
   padding: 2rem;
   box-sizing: border-box;
   border-bottom: 1px solid #ddd;
@@ -507,26 +536,26 @@ section.section {
   border-bottom: none;
 }
 
+/* Título da refeição em branco */
 .meal-title {
   font-size: 1.75rem;
-  color: #1d3557;
+  color: #fff; /* branco para contraste no overlay */
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-/* Estilização do card da receita */
+/* Card de receita com fundo quase branco translúcido e texto escuro */
 .recipe-card {
-  background-color: #f0f4f8;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-
-  /* Limita a largura máxima do card */
-  max-width: 600px;
+  max-width: 850px;
   width: 100%;
-  margin: 0 auto; /* Centraliza dentro da meal-section */
+  margin: 0 auto;
 }
 
 .recipe-card:hover {
@@ -541,7 +570,7 @@ section.section {
   margin-bottom: 1rem;
 }
 
-/* Exibe quebras de linha no modo de preparo */
+/* Quebras de linha no modo de preparo */
 .instructions {
   white-space: pre-line;
 }
@@ -559,16 +588,14 @@ section.section {
   cursor: pointer;
   z-index: 10;
 }
-
 .carousel-btn--prev {
   left: 10px;
 }
-
 .carousel-btn--next {
   right: 10px;
 }
 
-/* Opcional: ocultar a barra de rolagem em navegadores */
+/* Ocultar barra de rolagem (opcional) */
 .schedule-container::-webkit-scrollbar {
   display: none;
 }
@@ -576,5 +603,16 @@ section.section {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Força o h2.title.is-3 a ficar branco dentro de .daily-schedule-bg */
+.daily-schedule-bg h2.title.is-3 {
+  color: #fff !important;
+}
+
+/* Se quiser que a Data e Hora (p.is-size-4) também fiquem brancas */
+.daily-schedule-bg p.is-size-4 {
+  color: #fff !important;
+}
+
 
 /* FIM */

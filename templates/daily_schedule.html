@@ -5,10 +5,13 @@
 {% block content %}
 <div class="daily-schedule-bg">
   <h2 class="title is-3">Agenda Diária de Alimentação Saudável</h2>
-  <p class="is-size-4"><strong>Data:</strong> {{ date }}</p>
-  <p class="is-size-4"><strong>Hora:</strong> {{ current_time }}</p>
-
-  <!-- Envolve o carrossel em um wrapper -->
+  
+  <!-- Texto explicativo com efeito animado e "karaokê" -->
+  <div class="explanatory-text animate__animated animate__fadeInUp">
+    Bem-vindo(a) à nossa Agenda Diária! Aqui, você encontra sugestões de receitas saudáveis que são atualizadas diariamente para oferecer praticidade e inovação na sua rotina. Desfrute de refeições cuidadosamente planejadas, com ingredientes frescos e modos de preparo detalhados. Se preferir, você também pode selecionar outras receitas diretamente pelo menu de navegação. Transforme seu dia com facilidade e sabor!
+  </div>
+  
+  <!-- Carrossel de refeições -->
   <div class="carousel-wrapper">
     <!-- Botão de Navegação: Anterior -->
     <button id="prev" class="carousel-btn carousel-btn--prev" aria-label="Anterior">‹</button>

@@ -499,14 +499,77 @@ section.section {
 }
 
 /* Sobrescrever padding/margin do Bulma em section e container dentro da rota */
-.daily-schedule-bg .section {
-  padding: 0 !important;
-  margin: 0 !important;
-}
+.daily-schedule-bg .section,
 .daily-schedule-bg .container {
   padding: 0 !important;
   margin: 0 !important;
   max-width: 100% !important;
+}
+
+/* Estilização do texto explicativo com efeito hover sutil */
+.explanatory-text {
+  background-color: rgba(255, 255, 255, 0.8); /* Fundo translúcido */
+  color: #000;                                 /* Texto escuro */
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, font-size 0.3s ease;
+  overflow: visible;
+}
+
+/* Efeito hover permanece sutil (sem aumento exagerado) */
+.explanatory-text:hover {
+  animation: textExpand 0.6s ease forwards;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes textExpand {
+  0% {
+    transform: scale(1);
+    font-size: 1rem;
+  }
+  50% {
+    transform: scale(1.03);
+    font-size: 1.03rem;
+  }
+  100% {
+    transform: scale(1.02);
+    font-size: 1.02rem;
+  }
+}
+
+/* 
+   .karaoke-word:
+   Cada palavra é envolvida nesse contêiner, garantindo que não seja cortada
+   no meio. Com white-space: nowrap, a palavra inteira pula para a próxima 
+   linha caso não caiba.
+*/
+.karaoke-word {
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* Efeito "karaokê": cada letra animada individualmente */
+.letter {
+  display: inline;
+  opacity: 0;
+  animation: letterColor 0.5s forwards;
+}
+
+@keyframes letterColor {
+  0% {
+    opacity: 0;
+    color: inherit;
+  }
+  50% {
+    opacity: 1;
+    color: #007bff; /* Cor de destaque */
+  }
+  100% {
+    opacity: 1;
+    color: inherit;  /* Retorna para a cor original (normalmente preto) */
+  }
 }
 
 /* Carrossel */
@@ -537,7 +600,6 @@ section.section {
   box-sizing: border-box;
   border-bottom: 1px solid #ddd;
 }
-
 .meal-section:last-child {
   border-bottom: none;
 }
@@ -545,7 +607,7 @@ section.section {
 /* Título da refeição em branco */
 .meal-title {
   font-size: 1.75rem;
-  color: #fff; /* branco para contraste no overlay */
+  color: #fff; /* branco para contraste */
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -563,7 +625,6 @@ section.section {
   width: 100%;
   margin: 0 auto;
 }
-
 .recipe-card:hover {
   transform: scale(1.02);
 }
@@ -601,7 +662,7 @@ section.section {
   right: 10px;
 }
 
-/* Ocultar barra de rolagem (opcional) */
+/* Remove scrollbar */
 .schedule-container::-webkit-scrollbar {
   display: none;
 }
@@ -615,10 +676,51 @@ section.section {
   color: #fff !important;
 }
 
-/* Se quiser que a Data e Hora (p.is-size-4) também fiquem brancas */
-.daily-schedule-bg p.is-size-4 {
-  color: #fff !important;
+
+/* RESPONSIVIDADE COM OUTROS DISPOSITIVOS */
+/* Media Queries para melhorar a responsividade */
+@media screen and (max-width: 768px) {
+  /* Ajusta os tamanhos dos títulos e textos na Agenda Diária */
+  .daily-schedule-bg h2.title.is-3 {
+    font-size: 2.2rem;
+  }
+  .explanatory-text {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+  .meal-title {
+    font-size: 1.5rem;
+  }
+  .recipe-card {
+    padding: 1rem;
+    max-width: 95%;
+  }
+  .carousel-btn {
+    font-size: 1.5rem;
+    padding: 0.75rem;
+  }
 }
 
+@media screen and (max-width: 480px) {
+  /* Ajusta para dispositivos muito pequenos */
+  .daily-schedule-bg h2.title.is-3 {
+    font-size: 2rem;
+  }
+  .explanatory-text {
+    font-size: 0.95rem;
+    padding: 0.7rem 0.8rem;
+  }
+  .meal-title {
+    font-size: 1.3rem;
+  }
+  .recipe-card {
+    padding: 0.8rem;
+    max-width: 100%;
+  }
+  .carousel-btn {
+    font-size: 1.3rem;
+    padding: 0.5rem;
+  }
+}
 
 /* FIM */
